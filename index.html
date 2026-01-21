@@ -1,0 +1,4138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>New Dashboard</title>
+	<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+	<link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+	<link href="sumoselect.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="Lmsphase2.css" />
+
+</head>
+
+<body>
+	<!-- Lead Management -->
+	<div class="lead-tab d-flex align-items-center gap-3 p-4">
+		<span id="lead-dashboard-tab" class="title px-2">Lead
+			Dashboard</span>
+		<span id="lead-status-tab" class="title px-2">Assigned Lead</span>
+	</div>
+	<!-- Lead Management Ends -->
+
+	<!-- Lead Dashboard Panel Starts -->
+	<div class="">
+		<div id="dashboard-panel" class="dashboard-container p-4 pt-0">
+
+			<div class="container-fluid p-0 my-2">
+				<div class="row g-3 gy-5">
+
+					<div class="col-md-8">
+						<div
+							class="dashboard-chart-card dashboard-camp-graph d-flex flex-column justify-content-center align-items-start">
+							<h3 class="campaign-title p-3 ps-4 text-gray">Campaigns</h3>
+							<figure class="highcharts-figure">
+								<div id="campaign-graph"></div>
+							</figure>
+						</div>
+					</div>
+					<!-- Donut Chart -->
+					<div class="col-md-4">
+
+						<div
+							class="dashboard-chart-card dashboard-pie-chart d-flex flex-column justify-content-between">
+
+
+							<div id="pieChart"></div>
+							<div class="pie-leads">
+								<div class="">
+									<div class="d-flex flex-column justify-content-between align-items-start p-3 pt-0">
+										<div class="d-flex align-items-center">
+											<p class="m-0 text-gray">Total Leads : <span class="text-black">1,234</span>
+											</p>
+										</div>
+										<span class="stat-change">+12.5% from last month</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+					<!-- Stats Section -->
+					<div class="col-12">
+						<div class="row g-3">
+							<!-- Total Leads -->
+							<!-- <div class="col-md-4">
+								<div class="dashboard-card">
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<p class="mb-2 text-gray">Total Leads</p>
+											<h3 class="stat-value">1,234</h3>
+											<span class="stat-change">+12.5% from last month</span>
+										</div>
+										<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+											viewBox="0 0 32 29" fill="none" class="svgOneIcon">
+											<path
+												d="M12.4992 0C9.22587 0 6.53421 2.59167 6.53421 5.83333C6.53421 9.075 9.22587 11.6667 12.5009 11.6667C15.2575 11.6667 17.6009 9.82833 18.2725 7.31167C18.5683 8.32022 19.2148 9.18985 20.0953 9.76365C20.9759 10.3374 22.0326 10.5776 23.0746 10.4408C24.1167 10.304 25.0756 9.79931 25.7783 9.0177C26.4809 8.23608 26.8811 7.22907 26.9065 6.17836C26.932 5.12765 26.581 4.10244 25.9171 3.28772C25.2531 2.473 24.3198 1.92243 23.2855 1.73535C22.2513 1.54827 21.1842 1.737 20.2769 2.26749C19.3696 2.79798 18.6818 3.63529 18.3375 4.62833C17.7659 1.97 15.3542 0 12.4992 0ZM8.20087 5.83333C8.20087 3.55167 10.1059 1.66667 12.5009 1.66667C14.8942 1.66667 16.7975 3.55167 16.7975 5.83333C16.7975 8.115 14.8942 10 12.4992 10C10.1059 10 8.20087 8.115 8.20087 5.83333ZM19.7609 6.07167C19.7609 5.34542 20.0494 4.64891 20.5629 4.13537C21.0764 3.62184 21.773 3.33333 22.4992 3.33333C23.2255 3.33333 23.922 3.62184 24.4355 4.13537C24.949 4.64891 25.2375 5.34542 25.2375 6.07167C25.2375 6.79792 24.949 7.49442 24.4355 8.00796C23.922 8.5215 23.2255 8.81 22.4992 8.81C21.773 8.81 21.0764 8.5215 20.5629 8.00796C20.0494 7.49442 19.7609 6.79792 19.7609 6.07167ZM9.41587 14.0283C8.8042 13.6333 7.95921 13.3517 7.09254 13.59C6.82587 13.6644 6.56032 13.7433 6.29587 13.8267L4.65421 14.3533C2.72921 14.97 1.24754 16.4933 0.745873 18.4167L0.734206 18.4617L0.0392059 23.3567C-0.214127 25.1433 0.770873 26.95 2.68587 27.395C4.64921 27.85 7.83254 28.3333 12.4992 28.3333C17.1659 28.3333 20.3492 27.85 22.3125 27.395C24.2292 26.95 25.2125 25.1433 24.9592 23.3567L24.2642 18.4617L24.2525 18.4167C23.7525 16.4933 22.2692 14.9683 20.3442 14.3533L18.7042 13.8267C18.4398 13.7422 18.1736 13.6633 17.9059 13.59C17.0392 13.3517 16.1942 13.6333 15.5842 14.0283C14.9275 14.4517 13.8425 14.9767 12.5009 14.9767C11.1592 14.9767 10.0709 14.4533 9.41587 14.0283ZM7.53421 15.195C7.79254 15.1233 8.14587 15.19 8.51087 15.425C9.32587 15.9533 10.7259 16.6417 12.4992 16.6417C14.2742 16.6417 15.6742 15.9533 16.4892 15.425C16.8525 15.1917 17.2059 15.125 17.4642 15.195C17.7086 15.2617 17.9525 15.3339 18.1959 15.4117L19.8359 15.9383C21.2242 16.3833 22.2659 17.4633 22.6275 18.79L23.3109 23.59C23.4609 24.65 22.8892 25.5483 21.9359 25.77C20.1075 26.1933 17.0525 26.665 12.4992 26.665C7.94587 26.665 4.89254 26.1933 3.06254 25.77C2.11087 25.5483 1.53921 24.65 1.68921 23.59L2.37254 18.79C2.73254 17.4633 3.77254 16.3833 5.16254 15.9383L6.80421 15.4133C7.04643 15.3356 7.28976 15.2633 7.53421 15.1967M26.1375 11.33C25.8749 11.2645 25.6006 11.2608 25.3363 11.3192C25.072 11.3776 24.8248 11.4966 24.6142 11.6667C24.1642 12.0167 23.3675 12.5 22.4992 12.5C22.2782 12.5 22.0662 12.5878 21.9099 12.7441C21.7537 12.9004 21.6659 13.1123 21.6659 13.3333C21.6659 13.5543 21.7537 13.7663 21.9099 13.9226C22.0662 14.0789 22.2782 14.1667 22.4992 14.1667C23.9292 14.1667 25.0925 13.405 25.6375 12.9833C25.6577 12.9642 25.6824 12.9505 25.7092 12.9433H25.7159C25.9392 13.0022 26.1609 13.0678 26.3809 13.14L27.5225 13.515C28.3992 13.8033 29.0642 14.505 29.2992 15.3717L29.7709 18.7867C29.8642 19.4583 29.5109 19.9617 29.0042 20.0817C28.632 20.1728 28.1803 20.2617 27.6492 20.3483C27.5411 20.3658 27.4375 20.4045 27.3443 20.462C27.2511 20.5196 27.1701 20.5949 27.1061 20.6838C27.042 20.7726 26.9961 20.8732 26.9709 20.9798C26.9457 21.0864 26.9417 21.1969 26.9592 21.305C26.9767 21.4131 27.0154 21.5167 27.0729 21.6099C27.1305 21.7031 27.2058 21.7841 27.2946 21.8481C27.3835 21.9122 27.4841 21.9582 27.5906 21.9834C27.6972 22.0086 27.8077 22.0125 27.9159 21.995C28.4848 21.9006 28.9759 21.8033 29.3892 21.7033C30.8809 21.3483 31.6109 19.92 31.4225 18.5583L30.9375 15.0483L30.9259 15.0033C30.7434 14.2897 30.3833 13.6338 29.8791 13.0968C29.375 12.5597 28.7432 12.1589 28.0425 11.9317L26.9009 11.5567C26.6487 11.4735 26.3942 11.3979 26.1375 11.33Z"
+												fill="black" />
+										</svg>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- Assigned -->
+							<div class="col-md-4">
+								<div class="dashboard-card">
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<p class="mb-2 text-gray">Assigned</p>
+											<h3 class="stat-value">27.7%</h3>
+										</div>
+										<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+											viewBox="0 0 40 40" fill="none" class="svgCardIcon svgFirstIcon">
+											<g clip-path="url(#clip0_28_24170)">
+												<path
+													d="M20 18.8888C21.6399 18.891 23.2435 18.4067 24.6081 17.4973C25.9727 16.5878 27.0368 15.294 27.6659 13.7796C28.2949 12.2652 28.4607 10.5983 28.1421 8.98966C27.8235 7.38104 27.035 5.90306 25.8762 4.74273C24.7174 3.5824 23.2405 2.79185 21.6323 2.47112C20.0241 2.15039 18.3569 2.31389 16.8417 2.94093C15.3264 3.56797 14.0312 4.63037 13.1199 5.99371C12.2086 7.35705 11.7222 8.96006 11.7222 10.5999C11.7222 12.7963 12.594 14.903 14.1461 16.4571C15.6981 18.0113 17.8036 18.8859 20 18.8888ZM20 4.52214C21.2008 4.51995 22.3753 4.87416 23.3746 5.53993C24.374 6.2057 25.1533 7.15307 25.6139 8.26206C26.0744 9.37105 26.1955 10.5918 25.9617 11.7696C25.728 12.9475 25.15 14.0295 24.3009 14.8786C23.4518 15.7277 22.3698 16.3057 21.1919 16.5394C20.0141 16.7732 18.7934 16.6521 17.6844 16.1915C16.5754 15.731 15.628 14.9517 14.9622 13.9523C14.2965 12.953 13.9423 11.7785 13.9445 10.5777C13.9474 8.97257 14.5863 7.43402 15.7213 6.29902C16.8563 5.16402 18.3949 4.52508 20 4.52214Z"
+													fill="black" />
+												<path
+													d="M6.66665 35.4334V28.6334C8.38206 26.833 10.4534 25.4094 12.7488 24.4529C15.0443 23.4965 17.5137 23.0282 20 23.0779C23.403 23.0314 26.7525 23.9275 29.6778 25.6667L31.1778 23.989C27.8331 21.8823 23.9526 20.783 20 20.8223C17.108 20.7486 14.2353 21.3139 11.5869 22.4777C8.93839 23.6416 6.57929 25.3754 4.67776 27.5556C4.52954 27.7466 4.44762 27.9806 4.44442 28.2223V35.4334C4.42948 36.0386 4.65492 36.6251 5.0714 37.0645C5.48789 37.5039 6.06149 37.7604 6.66665 37.7779H20.4333L18.3222 35.5556L6.66665 35.4334Z"
+													fill="black" />
+												<path
+													d="M33.3333 35.4333V35.5555H29.8333L27.8333 37.7778H33.3333C33.9307 37.7604 34.4975 37.51 34.9128 37.0802C35.328 36.6505 35.5587 36.0753 35.5555 35.4778V29.1111L33.3333 31.5889V35.4333Z"
+													fill="black" />
+												<path
+													d="M38.6222 20.6889C38.4025 20.4933 38.1142 20.3928 37.8205 20.4095C37.5268 20.4262 37.2517 20.5586 37.0555 20.7778L24.1444 35.2222L18.3667 29.0111C18.2718 28.9002 18.1561 28.8091 18.026 28.7429C17.8959 28.6768 17.7541 28.6369 17.6086 28.6255C17.4632 28.6142 17.3169 28.6316 17.1781 28.6768C17.0394 28.722 16.9109 28.794 16.8 28.8889C16.6914 28.9877 16.6034 29.1071 16.5412 29.2401C16.479 29.3731 16.4438 29.5172 16.4376 29.6639C16.4314 29.8106 16.4543 29.9571 16.5051 30.0949C16.5558 30.2327 16.6334 30.359 16.7333 30.4667L24.1667 38.4667L38.7111 22.2222C38.8965 22.0044 38.9908 21.7234 38.9742 21.4377C38.9577 21.1521 38.8316 20.8839 38.6222 20.6889Z"
+													fill="#27C840" />
+											</g>
+											<defs>
+												<clipPath id="clip0_28_24170">
+													<rect width="40" height="40" fill="white" />
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+							</div>
+
+
+							<!-- Not Assigned -->
+							<div class="col-md-4">
+								<div class="dashboard-card">
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<p class="mb-2 text-gray">Not Assigned</p>
+											<h3 class="stat-value">27.7%</h3>
+											<div class="small-text d-flex align-items-center gap-1">
+												<span id="dashboard-undialed" class="data-not-assigned m-0 text-primary"
+													data-bs-toggle="modal" data-bs-target="#notdialed-modal">20% Not
+													Dialed</span>
+												<span>&</span>
+												<span id="dashboard-dialed" class="data-not-assigned m-0 text-primary"
+													data-bs-toggle="modal" data-bs-target="#dialed-modal">80%
+													Dialed</span>
+											</div>
+										</div>
+										<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+											viewBox="0 0 40 40" fill="none" class="svgCardIcon svgSecondIcon">
+											<g clip-path="url(#clip0_28_24185)">
+												<path
+													d="M19.9999 18.8888C21.6398 18.891 23.2435 18.4067 24.608 17.4973C25.9726 16.5878 27.0367 15.294 27.6658 13.7796C28.2949 12.2652 28.4606 10.5983 28.142 8.98966C27.8235 7.38104 27.0349 5.90306 25.8761 4.74273C24.7173 3.5824 23.2404 2.79185 21.6322 2.47112C20.024 2.15039 18.3569 2.31389 16.8416 2.94093C15.3264 3.56797 14.0312 4.63037 13.1199 5.99371C12.2086 7.35705 11.7222 8.96006 11.7222 10.5999C11.7222 12.7963 12.5939 14.903 14.146 16.4571C15.6981 18.0113 17.8035 18.8859 19.9999 18.8888ZM19.9999 4.52214C21.2008 4.51995 22.3752 4.87416 23.3746 5.53993C24.3739 6.2057 25.1532 7.15307 25.6138 8.26206C26.0743 9.37105 26.1954 10.5918 25.9617 11.7696C25.728 12.9475 25.1499 14.0295 24.3008 14.8786C23.4517 15.7277 22.3697 16.3057 21.1919 16.5394C20.014 16.7732 18.7933 16.6521 17.6843 16.1915C16.5753 15.731 15.6279 14.9517 14.9622 13.9523C14.2964 12.953 13.9422 11.7785 13.9444 10.5777C13.9473 8.97257 14.5863 7.43402 15.7213 6.29902C16.8563 5.16402 18.3948 4.52508 19.9999 4.52214Z"
+													fill="black" />
+												<path
+													d="M6.66665 35.4333V28.6333C8.38206 26.8329 10.4534 25.4093 12.7488 24.4528C15.0443 23.4964 17.5137 23.0281 20 23.0778C23.403 23.0313 29.0747 26.4829 32 28.2222L33.5 26.5444C30.1553 24.4377 23.9526 20.4607 20 20.5C17.108 20.4263 14.2354 21.3138 11.5869 22.4776C8.93839 23.6415 6.57929 25.3753 4.67776 27.5555C4.52954 27.7465 4.44762 27.9805 4.44442 28.2222V35.4333C4.42948 36.0385 4.65492 36.625 5.0714 37.0644C5.48789 37.5038 6.06149 37.7603 6.66665 37.7778L22.5 37.7112L24.5 35.4333H6.66665Z"
+													fill="black" />
+												<path d="M32.9783 37.1102L33.3334 37.7778H33.6243L32.9783 37.1102Z"
+													fill="black" />
+												<path
+													d="M32.3334 36.4438L33.3334 37.7778L32.9783 37.1102L32.3334 36.4438Z"
+													fill="black" />
+												<path fill-rule="evenodd" clip-rule="evenodd"
+													d="M33.3334 32.9998V31.5889L35.5556 29.1111V35.2257L33.3334 32.9998ZM31.5 35.5555L32.3334 36.4438L33.3334 37.7778H26.5L29 35.4333L31.5 35.5555Z"
+													fill="black" />
+												<path fill-rule="evenodd" clip-rule="evenodd"
+													d="M22.7596 24.2596C22.9261 24.0934 23.1517 24 23.3869 24C23.6222 24 23.8478 24.0934 24.0142 24.2596L38.2175 38.4628C38.3047 38.5441 38.3746 38.6421 38.4232 38.751C38.4717 38.8599 38.4978 38.9774 38.4999 39.0966C38.502 39.2158 38.48 39.3342 38.4354 39.4448C38.3907 39.5553 38.3243 39.6557 38.24 39.74C38.1557 39.8243 38.0553 39.8907 37.9448 39.9354C37.8342 39.98 37.7158 40.002 37.5966 39.9999C37.4774 39.9978 37.3599 39.9717 37.251 39.9232C37.1421 39.8746 37.0441 39.8047 36.9628 39.7175L22.7596 25.5142C22.5934 25.3478 22.5 25.1222 22.5 24.8869C22.5 24.6517 22.5934 24.4261 22.7596 24.2596Z"
+													fill="#FF5F57" />
+												<path fill-rule="evenodd" clip-rule="evenodd"
+													d="M38.2175 24.2596C38.3837 24.4261 38.4771 24.6517 38.4771 24.8869C38.4771 25.1222 38.3837 25.3478 38.2175 25.5142L24.0142 39.7175C23.846 39.8743 23.6234 39.9596 23.3934 39.9556C23.1634 39.9515 22.944 39.8584 22.7814 39.6957C22.6187 39.5331 22.5256 39.3136 22.5215 39.0837C22.5174 38.8537 22.6028 38.6311 22.7596 38.4628L36.9628 24.2596C37.1293 24.0934 37.3549 24 37.5902 24C37.8254 24 38.051 24.0934 38.2175 24.2596Z"
+													fill="#FF5F57" />
+											</g>
+											<defs>
+												<clipPath id="clip0_28_24185">
+													<rect width="40" height="40" fill="white" />
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+							</div>
+
+							<!-- Connect Rate -->
+							<div class="col-md-4">
+								<div class="dashboard-card">
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<p class="mb-2 text-gray">Connect Rate</p>
+											<h3 class="stat-value">27.7%</h3>
+										</div>
+										<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+											viewBox="0 0 30 30" fill="none" class="svgCardIcon svgThirdIcon">
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M16.2433 27.89C19.1944 29.2967 22.0744 30 24.8833 30C25.3911 30 25.8167 29.8333 26.1567 29.5C26.4967 29.1667 26.6667 28.75 26.6667 28.25V24.1917C26.6667 23.7461 26.5256 23.3506 26.2433 23.005C25.9611 22.6594 25.5939 22.4311 25.1417 22.32L21.635 21.6033C21.225 21.5467 20.8506 21.565 20.5117 21.6583C20.1728 21.7517 19.8678 21.9444 19.5967 22.2367L16.0317 25.865C14.6983 25.1261 13.4744 24.3406 12.36 23.5083C11.2433 22.675 10.2017 21.775 9.235 20.8083C8.29611 19.855 7.41278 18.8456 6.585 17.78C5.75722 16.7144 5.00167 15.5611 4.31833 14.32L7.97333 10.91C8.23778 10.6878 8.42278 10.4028 8.52833 10.055C8.63389 9.70722 8.64778 9.3 8.57 8.83333L7.74333 4.86C7.62333 4.41333 7.395 4.04722 7.05833 3.76167C6.72056 3.47611 6.325 3.33333 5.87167 3.33333H1.75C1.25 3.33556 0.833333 3.50611 0.5 3.845C0.166667 4.18389 0 4.60778 0 5.11667C0 7.92556 0.703333 10.8 2.11 13.74C3.51667 16.68 5.48611 19.4217 8.01833 21.965C10.5506 24.5083 13.2922 26.4833 16.2433 27.89ZM6.73333 9.815L3.53333 12.7567C2.97556 11.5011 2.53611 10.2539 2.21167 9.015C1.88722 7.77611 1.70889 6.58722 1.67667 5.44833C1.67667 5.32056 1.71944 5.21389 1.805 5.12833C1.89056 5.04278 1.99722 5 2.125 5H5.545C5.715 5 5.85333 5.04278 5.96 5.12833C6.06667 5.21389 6.14111 5.34167 6.18333 5.51167L6.92333 9.045C6.96778 9.17278 6.97333 9.31167 6.94 9.46167C6.90778 9.61167 6.83889 9.72944 6.73333 9.815ZM21.2183 27.885C19.945 27.6172 18.745 27.2044 17.6183 26.6467L20.7633 23.44C20.87 23.3344 20.9717 23.265 21.0683 23.2317C21.1639 23.1994 21.2761 23.205 21.405 23.2483L24.4883 23.88C24.6583 23.9222 24.7861 23.9967 24.8717 24.1033C24.9572 24.2111 25 24.35 25 24.52V27.8667C25 27.9933 24.9572 28.0994 24.8717 28.185C24.7861 28.2706 24.6794 28.3133 24.5517 28.3133C23.605 28.2944 22.4939 28.1517 21.2183 27.885Z"
+												fill="black" />
+											<path d="M15 1.66667V0H30V1.66667H15Z" fill="black" />
+											<path d="M15 7.30833V5.64167H30V7.30833H15Z" fill="black" />
+											<path d="M15 12.9483V11.2817H30V12.9483H15Z" fill="black" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+
+			<div class="carousel-wrap my-5">
+				<div class="owl-carousel owl-carousel1">
+
+					<div class="item">
+						<div class="box active-box">
+							<p class="carousel-item-title text-secondary m-0">All</p>
+							<span class="carousel-item-subtitle">1283</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Interested in Demo</p>
+							<span class="carousel-item-subtitle">126</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Callback</p>
+							<span class="carousel-item-subtitle">23</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Call Drop</p>
+							<span class="carousel-item-subtitle">76</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Call Cut</p>
+							<span class="carousel-item-subtitle">124</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Connected</p>
+							<span class="carousel-item-subtitle">32</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">DND Call</p>
+							<span class="carousel-item-subtitle">65</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Inquiry</p>
+							<span class="carousel-item-subtitle">656</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Hang Up</p>
+							<span class="carousel-item-subtitle">34</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Invalid</p>
+							<span class="carousel-item-subtitle">2</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- Search Container -->
+			<div class="search-container d-flex align-items-center mt-5 position-relative">
+				<div class="search-box input-group d-flex align-items-center border py-1 me-3">
+					<!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+					<i class="bi bi-search search-icon mx-2"></i>
+					<input type="text" class="search-lead-input form-control rounded-3 border-0"
+						placeholder="Search all the items in the lead status table" aria-label="Username"
+						aria-describedby="basic-addon1">
+					<span class="fw-bold ai-mode mx-2 rounded-pill border">AI Mode</span>
+				</div>
+				<div class="search-box-filters d-flex align-items-center gap-4">
+					<i id="dashboard-filter-funnel" class="search-filter bi bi-funnel fs-4 "></i>
+					<i id="dashboard-filter-calendar" class="search-filter bi bi-calendar4 fs-4 "></i>
+				</div>
+				<!-- filter Pop Up -->
+				<div id="dashboard-filter-popup" style="display:none;">
+					<div class="filter-popup d-flex flex-column border position-absolute bg-white z-2">
+						<span>Filters</span>
+						<select multiple class="select-campaign border rounded-3 p-2"
+							aria-label="Default select example">
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+
+						<select multiple class="select-dispositions filter-select border rounded-3 p-2"
+							aria-label="Default select example">
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+
+						<select multiple class="select-agents filter-select border rounded-3 p-2"
+							aria-label="Default select example">
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+
+						<div class="d-flex align-items-center gap-2">
+							<span>Attempts:</span>
+							<input type="text" class="form-control py-2" placeholder="No. of Attempts"
+								aria-label="attempts">
+							<select class="filter-select form-select border rounded-3 p-2"
+								aria-label="Default select example">
+								<option class="text-secondary" value="" selected disabled hidden>Count/%age</option>
+								<option value="count">Count</option>
+								<option value="age">%age</option>
+							</select>
+						</div>
+
+						<button type="button" id="apply-filter-funnel" class="lead-status-filter btn">Apply</button>
+
+					</div>
+				</div>
+
+				<!-- Calendar Popup -->
+				<div id="dashboard-calendar-popup" style="display:none;">
+					<div class="calendar-popup d-flex flex-column border position-absolute bg-white z-3">
+						<span>Filter By Date</span>
+
+						<div class="row g-0 d-flex justify-content-center border rounded-3">
+							<div class="col-6">
+								<div
+									class="filter-date filter-date2 d-flex justify-content-center rounded-start-3 p-2 active-filter-date-option">
+									Receive Date
+								</div>
+							</div>
+
+							<div class="col-6">
+								<div class="filter-date filter-date2 d-flex justify-content-center rounded-end-3 p-2">
+									Call Date
+								</div>
+							</div>
+						</div>
+
+						<div class="row g-0 d-flex justify-content-center border rounded-3">
+							<div class="col-3">
+								<div class="filter-day d-flex justify-content-center rounded-start-3 p-2">
+									Today
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="filter-day filter-day2 d-flex justify-content-center p-2 ">
+									Yesterday
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="filter-day filter-day2 d-flex justify-content-center p-2">
+									Week
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div
+									class="filter-day filter-day2 d-flex justify-content-center rounded-end-3 p-2 active-filter-day-option">
+									Month
+								</div>
+							</div>
+						</div>
+
+							<div class="date-picker-container">
+								<div class="date-inputs">
+									<div class="d-flex gap-3 align-items-center border rounded-3 px-2 w-100">
+										<input type="text" class="date-field start-date" readonly placeholder="Start date">
+										<i class="bi bi-chevron-left fs-5 text-secondary arrow-separator"></i>
+										<i class="bi bi-chevron-right fs-5 text-secondary arrow-separator"></i>
+										<input type="text" class="date-field end-date" readonly placeholder="End date">
+										<span class="calendar-icon">
+											<i class="bi bi-calendar text-primary fs-6"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="calendar p-2">
+									<div class="calendar-header">
+										<button class="prev-month">
+											<i class="bi bi-chevron-left fs-6 text-secondary"></i>
+										</button>
+										<div class="calendar-month-year-select d-flex gap-2 align-items-center">
+											<div class="custom-select-wrapper">
+												<div class="custom-select month-select">
+													<div class="custom-select-trigger">
+														<span class="selected-value">January</span>
+														<i class="bi bi-chevron-down"></i>
+													</div>
+													<div class="custom-select-options">
+														<div class="custom-option" data-value="0">January</div>
+														<div class="custom-option" data-value="1">February</div>
+														<div class="custom-option" data-value="2">March</div>
+														<div class="custom-option" data-value="3">April</div>
+														<div class="custom-option" data-value="4">May</div>
+														<div class="custom-option" data-value="5">June</div>
+														<div class="custom-option" data-value="6">July</div>
+														<div class="custom-option" data-value="7">August</div>
+														<div class="custom-option" data-value="8">September</div>
+														<div class="custom-option" data-value="9">October</div>
+														<div class="custom-option" data-value="10">November</div>
+														<div class="custom-option" data-value="11">December</div>
+													</div>
+												</div>
+											</div>
+											<div class="custom-select-wrapper">
+												<div class="custom-select year-select">
+													<div class="custom-select-trigger">
+														<span class="selected-value">2026</span>
+														<i class="bi bi-chevron-down"></i>
+													</div>
+													<div class="custom-select-options"></div>
+												</div>
+											</div>
+										</div>
+										<button class="next-month">
+											<i class="bi bi-chevron-right fs-6 text-secondary"></i>
+										</button>
+									</div>
+
+									<!-- PRESERVED -->
+									<div class="calendar-grid">
+										<div class="calendar-day-name">Mon</div>
+										<div class="calendar-day-name">Tue</div>
+										<div class="calendar-day-name">Wed</div>
+										<div class="calendar-day-name">Thu</div>
+										<div class="calendar-day-name">Fri</div>
+										<div class="calendar-day-name">Sat</div>
+										<div class="calendar-day-name">Sun</div>
+									</div>
+
+									<!-- PRESERVED -->
+									<div class="calendar-grid calendar-days"></div>
+								</div>
+							</div>
+
+						<button type="button" id="apply-filter-calendar" class="lead-status-filter btn ">Apply</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="d-flex align-items-center gap-3 justify-content-end my-3">
+				<span class="fw-medium">Assign Lead</span>
+				<select id="dashboard-agent"
+					class="agent-selector border-0 rounded-3 p-1 outline-none text-primary pe-3 bg-transparent"
+					aria-label="Default select example">
+					<option selected>Select Agent</option>
+					<option value="1">RMA 1</option>
+					<option value="2">CDR 4</option>
+					<option value="3">SLR 4</option>
+				</select>
+			</div>
+
+			<!-- Dashboard Filter + Table -->
+			<!-- Agent + filter -->
+			<div class="dashboard-table-container mb-2 bg-white rounded-3">
+				<!-- Table Filters -->
+				<div class="d-flex align-items-center justify-content-between p-2">
+
+					<!-- Assig agent container -->
+					<!-- <div class="d-flex align-items-center gap-3">
+						<span class="fw-medium">Assign lead</span>
+						<select id="dashboard-agent"
+							class="agent-selector border-0 rounded-3 p-1 outline-none text-primary pe-3"
+							aria-label="Default select example">
+							<option selected>Select Agent</option>
+							<option value="1">RMA 1</option>
+							<option value="2">CDR 4</option>
+							<option value="3">SLR 4</option>
+						</select>
+					</div> -->
+
+					<!-- Pagination -->
+					<div class="d-flex align-items-center gap-4 ms-auto" id="dashboard-tbl-pagination">
+						<div class="page-totals d-flex align-items-center gap-1">
+							<span>1-10</span>
+							<span>of</span>
+							<span>100</span>
+						</div>
+						<div class="d-flex align-items-center gap-4">
+							<div class="pagination-btn">
+								<i class="bi bi-chevron-left"></i>
+							</div>
+							<span>1</span>
+							<div class="pagination-btn">
+								<i class="bi bi-chevron-right"></i>
+							</div>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<select class="border-0 rounded-2 outline-none bg-white"
+								aria-label="Default select example">
+								<option value="10" selected>10 </option>
+								<option value="25">25 </option>
+								<option value="50">50 </option>
+								<option value="100">100 </option>
+							</select>
+							<span>/Page</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Lead Status Table -->
+				<div class="dashboard-data-table table-responsive rounded-3">
+					<table cellspacing="5" cellpadding="10"
+						class="lead-dashboard-table table table-hover table-borderless"
+						style="border-radius: 10px !important;">
+						<thead class="">
+							<tr class="border-bottom">
+								<th><input class="" type="checkbox" value="" id="checkAllStats"></th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>S. No.
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Source
+									Name
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Received
+									Date
+									& Time</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Lead Name
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Phone No.
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Dialing
+									Date
+									& Time</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Dialer
+									Disposition</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Assigned
+									To
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Agent
+									Dispositions</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Agent Sub
+									Disposition</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Action
+								</th>
+							</tr>
+
+						</thead>
+						<tbody>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>Indiamart</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Interested in demo</td>
+								<td>John Doe</td>
+								<td>Interested in demo</td>
+								<td>Interested in demo</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detail-dashboard"
+										aria-controls="detailLead">View</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- Lead Dashboard Tab Ends -->
+		</div>
+	</div>
+	<!-- Lead Dashboard Panel Ends-->
+
+	<!-- Lead Status Panel Starts -->
+	<div class="">
+		<div id="lead-status-panel" class="lead-status-container p-4 py-0">
+
+			<!-- Search Box -->
+			<div class="search-container d-flex align-items-center my-2 position-relative">
+				<div class="search-box input-group d-flex align-items-center border py-1 me-3">
+					<!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+					<i class="bi bi-search search-icon mx-2"></i>
+					<input type="text" class="search-lead-input form-control rounded-3 border-0"
+						placeholder="Search all the items in the lead status table" aria-label="Username"
+						aria-describedby="basic-addon1">
+					<span class="fw-bold ai-mode mx-2 rounded-pill border">AI Mode</span>
+				</div>
+				<div class="search-box-filters d-flex align-items-center gap-4">
+					<i id="filter-funnel" class="search-filter bi bi-funnel fs-4 "></i>
+					<i id="filter-calendar" class="search-filter bi bi-calendar4 fs-4 "></i>
+				</div>
+				<!-- filter Pop Up -->
+				<div id="filter-popup" style="display:none;">
+					<div class="filter-popup d-flex flex-column border position-absolute bg-white z-2">
+						<span>Filters</span>
+						<select multiple class="select-lead-sources filter-select border rounded-3 p-2"
+							aria-label="Default select example">
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+
+						<select multiple class="select-agents-lead filter-select border rounded-3 p-2"
+							aria-label="Default select example">
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+
+						<select multiple class="select-stages-lead filter-select border rounded-3 p-2"
+							aria-label="Default select example">
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+
+						<select multiple class="select-disposition-lead filter-select border rounded-3 p-2"
+							aria-label="Default select example">
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="pinned-leads">
+							<label class="form-check-label" for="pinned-leads">
+								Only pinned leads will be visible
+							</label>
+						</div>
+
+						<button type="button" id="apply-filter-funnel" class="lead-status-filter btn ">Apply</button>
+
+					</div>
+				</div>
+
+
+
+				<!-- Calendar Popup -->
+				<div id="calendar-popup" style="display:none;">
+					<div class="calendar-popup d-flex flex-column border position-absolute bg-white z-3">
+						<span>Filter By Date</span>
+
+						<div class="row g-0 d-flex justify-content-center border rounded-3">
+							<div class="col-6">
+								<div
+									class="filter-date d-flex justify-content-center rounded-start-3 p-2 active-filter-date-option">
+									Receive Date
+								</div>
+							</div>
+
+							<div class="col-6">
+								<div class="filter-date d-flex justify-content-center rounded-end-3 p-2">
+									Call Date
+								</div>
+							</div>
+						</div>
+
+						<div class="row g-0 d-flex justify-content-center border rounded-3">
+							<div class="col-3">
+								<div class="filter-day d-flex justify-content-center rounded-start-3 p-2">
+									Today
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="filter-day d-flex justify-content-center p-2 ">
+									Yesterday
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="filter-day d-flex justify-content-center p-2">
+									Week
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div
+									class="filter-day d-flex justify-content-center rounded-end-3 p-2 active-filter-day-option">
+									Month
+								</div>
+							</div>
+						</div>
+
+						<div class="date-picker-container">
+							<div class="date-inputs">
+								<div class="d-flex gap-3 align-items-center border rounded-3 px-2 w-100">
+									<input type="text" class="date-field start-date" readonly placeholder="Start date">
+									<i class="bi bi-chevron-left fs-5 text-secondary arrow-separator"></i>
+									<i class="bi bi-chevron-right fs-5 text-secondary arrow-separator"></i>
+									<input type="text" class="date-field end-date" readonly placeholder="End date">
+									<span class="calendar-icon">
+										<i class="bi bi-calendar text-primary fs-6"></i>
+									</span>
+								</div>
+							</div>
+
+							<div class="calendar p-2">
+								<div class="calendar-header">
+									<button class="prev-month">
+										<i class="bi bi-chevron-left fs-6 text-secondary"></i>
+									</button>
+									<div class="calendar-month-year-select d-flex gap-2 align-items-center">
+										<div class="custom-select-wrapper">
+											<div class="custom-select month-select">
+												<div class="custom-select-trigger">
+													<span class="selected-value">January</span>
+													<i class="bi bi-chevron-down"></i>
+												</div>
+												<div class="custom-select-options">
+													<div class="custom-option" data-value="0">January</div>
+													<div class="custom-option" data-value="1">February</div>
+													<div class="custom-option" data-value="2">March</div>
+													<div class="custom-option" data-value="3">April</div>
+													<div class="custom-option" data-value="4">May</div>
+													<div class="custom-option" data-value="5">June</div>
+													<div class="custom-option" data-value="6">July</div>
+													<div class="custom-option" data-value="7">August</div>
+													<div class="custom-option" data-value="8">September</div>
+													<div class="custom-option" data-value="9">October</div>
+													<div class="custom-option" data-value="10">November</div>
+													<div class="custom-option" data-value="11">December</div>
+												</div>
+											</div>
+										</div>
+										<div class="custom-select-wrapper">
+											<div class="custom-select year-select">
+												<div class="custom-select-trigger">
+													<span class="selected-value">2026</span>
+													<i class="bi bi-chevron-down"></i>
+												</div>
+												<div class="custom-select-options"></div>
+											</div>
+										</div>
+									</div>
+									<button class="next-month">
+										<i class="bi bi-chevron-right fs-6 text-secondary"></i>
+									</button>
+								</div>
+
+								<!-- PRESERVED -->
+								<div class="calendar-grid">
+									<div class="calendar-day-name">Mon</div>
+									<div class="calendar-day-name">Tue</div>
+									<div class="calendar-day-name">Wed</div>
+									<div class="calendar-day-name">Thu</div>
+									<div class="calendar-day-name">Fri</div>
+									<div class="calendar-day-name">Sat</div>
+									<div class="calendar-day-name">Sun</div>
+								</div>
+
+								<!-- PRESERVED -->
+								<div class="calendar-grid calendar-days"></div>
+							</div>
+						</div>
+
+						<button type="button" id="apply-filter-calendar" class="lead-status-filter btn ">Apply</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Carousel -->
+			<div class="carousel-wrap mt-5">
+				<div class="owl-carousel owl-carousel2">
+
+					<div class="item">
+						<div class="box active-box">
+							<p class="carousel-item-title text-secondary m-0">All Stages</p>
+							<span class="carousel-item-subtitle text-black">5120</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Irrelevant Stage</p>
+							<span class="carousel-item-subtitle irrelevent-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Not Answered Stage</p>
+							<span class="carousel-item-subtitle unanswered-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Discussion Pending Stage</p>
+							<span class="carousel-item-subtitle decision-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Interested Follow-up Stage</p>
+							<span class="carousel-item-subtitle interested-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Demo Scheduled Stage</p>
+							<span class="carousel-item-subtitle demo-scheduled-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Demo Completed Stage</p>
+							<span class="carousel-item-subtitle demo-completed-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Commercial Sent Stage</p>
+							<span class="carousel-item-subtitle commercial-sent-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Negotiation Stage</p>
+							<span class="carousel-item-subtitle negogiation-stage-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Payment Link Sent Stage</p>
+							<span class="carousel-item-subtitle payment-link-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Payment Done Stage</p>
+							<span class="carousel-item-subtitle payment-done-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Not Interested Stage</p>
+							<span class="carousel-item-subtitle not-interested-text-color">50</span>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="box">
+							<p class="carousel-item-title text-secondary m-0">Language Barrier Leads</p>
+							<span class="carousel-item-subtitle language-barrier-text-color">50</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Re-Assign agent container -->
+			<div class="d-flex align-items-center gap-3 justify-content-end my-3">
+				<span class="fw-medium">Reassign Lead</span>
+				<select id="lead-agent"
+					class="agent-selector border-0 rounded-3 p-1 outline-none text-primary pe-3 bg-transparent"
+					aria-label="Default select example">
+					<option selected>Select Agent</option>
+					<option value="1">RMA 1</option>
+					<option value="2">CDR 4</option>
+					<option value="3">SLR 4</option>
+				</select>
+			</div>
+			<!-- Agent + filter -->
+			<div class="lead-table-container my-2 bg-white rounded-3">
+				<!-- Table Filters -->
+				<div class="d-flex align-items-center justify-content-between p-2">
+
+
+
+					<!-- Pagination -->
+					<div class="d-flex align-items-center gap-4 ms-auto" id="lead-tbl-pagination">
+						<div class="page-totals d-flex align-items-center gap-1">
+							<span>1-10</span>
+							<span>of</span>
+							<span>100</span>
+						</div>
+						<div class="d-flex align-items-center gap-4">
+							<div class="pagination-btn">
+								<i class="bi bi-chevron-left"></i>
+							</div>
+							<span>1</span>
+							<div class="pagination-btn">
+								<i class="bi bi-chevron-right"></i>
+							</div>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<select class="border-0 rounded-2 outline-none bg-white"
+								aria-label="Default select example">
+								<option value="10" selected>10 </option>
+								<option value="25">25 </option>
+								<option value="50">50 </option>
+								<option value="100">100 </option>
+							</select>
+							<span>/Page</span>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Lead Status Table -->
+				<div class="lead-data-table table-responsive rounded-3">
+					<table cellspacing="5" cellpadding="10" class="lead-status-table table table-hover table-borderless"
+						style="border-radius: 10px !important;">
+						<thead class="">
+							<tr class="border-bottom">
+								<th><input class="" type="checkbox" value="" id="checkAllStats"></th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>S. No.
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Date &
+									Time</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Lead
+									Source</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Lead
+									Name</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Lead's
+									Phone
+									No.</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Lead
+									Stage</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Assigned
+									To</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Call
+									Attempts
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Current
+									Dispositions</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Remarks
+								</th>
+								<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Action
+								</th>
+
+						</thead>
+						<tbody>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="irrelevant-text-color">Irrelevant</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="unanswered-text-color">Irrelevent</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="decision-text-color">Demo Scheduled</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="interested-text-color">Interested Follow-up</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="demo-scheduled-text-color">Irrelevent</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="demo-completed-text-color">Demo Scheduled</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="commercial-sent-text-color">Interested Follow-up</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="negogiation-stage-text-color">Irrelevent</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="payment-link-text-color">Demo Scheduled</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="payment-link-text-color">Demo Scheduled</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="payment-done-text-color">Demo Scheduled</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="not-interested-text-color">Demo Scheduled</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+							<tr>
+								<td><input class="" type="checkbox" value="" id=""></td>
+								<td>1</td>
+								<td>2021-02-05 08:28:36</td>
+								<td>Indiamart</td>
+								<td>John Doe</td>
+								<td>+91 9999999999</td>
+								<td class="language-barrier-text-color">Demo Scheduled</td>
+								<td>John Doe</td>
+								<td>3</td>
+								<td>Interested in demo</td>
+								<td class="remarks-col">Vel cras auctor at tortor imperdiet amet id sed rhoncus.</td>
+								<td class="tbl-action ">
+									<span class="tbl-view" data-bs-toggle="offcanvas" data-bs-target="#detailLead"
+										aria-controls="detailLead">View</span>
+									<i class="tbl-star bi bi-star text-primary"></i>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Lead Status Panel Ends-->
+
+
+	<!-- All Lead Dashboard modals Below -->
+	<!-- Dashboard Right Offcanvas Modal -->
+	<div class="lead-detail offcanvas offcanvas-end" tabindex="-1" id="detail-dashboard"
+		aria-labelledby="detailLeadLabel">
+		<div class="offcanvas-header position-relative">
+			<div class="lead-detail-header d-flex justify-content-between border w-100">
+				<div class=" d-flex flex-column p-3">
+					<h2>John Doe</h2>
+					<span>+91 9999999999</span>
+				</div>
+			</div>
+			<button type="button" class="close-lead-offcanvas text-white fs-4" data-bs-dismiss="offcanvas"
+				aria-label="Close">
+				<i class="bi bi-x-circle-fill"></i></button>
+
+		</div>
+		<div class="right-sidebar offcanvas-body pt-0">
+			<div class="row g-2 lead-basic-details">
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Lead Source</span>
+						<h5>Indiamart</h5>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Stage</span>
+						<h5>Stage 1</h5>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Assigned To</span>
+						<h5>John Doe</h5>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Total Attempts</span>
+						<h5>3</h5>
+					</div>
+				</div>
+			</div>
+			<div class="gradient-line my-4"></div>
+
+			<div class="d-flex flex-row align-items-center gap-4 mb-2">
+				<h3 id="dashboar-data-interation" class="dashboard-data-option active-tab-link">Customer Profile</h3>
+				<h3 id="dashboar-data-activity" class="dashboard-data-option">Activity</h3>
+			</div>
+			<select class="form-select form-select-sm pe-5 border rounded-3 w-25">
+				<option value="latest">Latest</option>
+				<option value="oldest">Oldest</option>
+			</select>
+
+
+			<div id="dashboar-info" class="mt-3 info-container pe-4">
+				<div class="info-item">
+					<div class="info-label">
+						<i class="text-primary bi bi-dot"></i>
+						<span>Email</span>
+					</div>
+					<div class="info-value">cpradeep12@gmail.com</div>
+				</div>
+
+				<div class="info-item">
+					<div class="info-label">
+						<i class="text-primary bi bi-dot"></i>
+						<span>Name</span>
+					</div>
+					<div class="info-value">Pradeep</div>
+				</div>
+
+				<div class="info-item align-items-baseline">
+					<div class="info-label">
+						<i class="text-primary bi bi-dot"></i>
+						<span>Address</span>
+					</div>
+					<div class="info-value">
+						Flat No. 7B, Test Tower, 12 Test Street, Model Colony, Andheri East, Mumbai - 400099, India
+					</div>
+				</div>
+			</div>
+
+			<div id="dashboard-call-details" class="call-details" style="display:none">
+
+				<div class="no-activity-title text-secondary fst-italic text-center">
+					<span>*No previous activity</span>
+				</div>
+
+				<div class="outbound-call row justify-content-between mt-3">
+					<div class="col-1 position-relative">
+						<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
+							<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#0A8F08" />
+							<path
+								d="M30.95 32C28.8667 32 26.8083 31.546 24.775 30.638C22.7417 29.73 20.8917 28.4423 19.225 26.775C17.5583 25.1077 16.271 23.2577 15.363 21.225C14.455 19.1923 14.0007 17.134 14 15.05C14 14.75 14.1 14.5 14.3 14.3C14.5 14.1 14.75 14 15.05 14H19.1C19.3333 14 19.5417 14.0793 19.725 14.238C19.9083 14.3967 20.0167 14.584 20.05 14.8L20.7 18.3C20.7333 18.5667 20.725 18.7917 20.675 18.975C20.625 19.1583 20.5333 19.3167 20.4 19.45L17.975 21.9C18.3083 22.5167 18.704 23.1123 19.162 23.687C19.62 24.2617 20.1243 24.816 20.675 25.35C21.1917 25.8667 21.7333 26.346 22.3 26.788C22.8667 27.23 23.4667 27.634 24.1 28L26.45 25.65C26.6 25.5 26.796 25.3877 27.038 25.313C27.28 25.2383 27.5173 25.2173 27.75 25.25L31.2 25.95C31.4333 26.0167 31.625 26.1377 31.775 26.313C31.925 26.4883 32 26.684 32 26.9V30.95C32 31.25 31.9 31.5 31.7 31.7C31.5 31.9 31.25 32 30.95 32ZM17.025 20L18.675 18.35L18.25 16H16.025C16.1083 16.6833 16.225 17.3583 16.375 18.025C16.525 18.6917 16.7417 19.35 17.025 20ZM25.975 28.95C26.625 29.2333 27.2877 29.4583 27.963 29.625C28.6383 29.7917 29.3173 29.9 30 29.95V27.75L27.65 27.275L25.975 28.95Z"
+								fill="#0A8F08" />
+						</svg>
+						<div class="outbound-call-line"></div>
+					</div>
+					<div class="col-10">
+						<div class="outbound-call-details d-flex flex-column gap-2 border border-secondary p-2 px-3">
+							<div class="d-flex align-items-center justify-content-between">
+								<div class="d-flex align-items-center gap-2">
+									<span class="outbound-title">Outbound Call</span>
+									<i class="play-recording bi bi-play-circle text-primary fs-5"
+										data-key="outbound-answered-dashboard" data-state="play"></i>
+									<i class="play-recording bi bi-pause-circle text-primary fs-5 d-none"
+										data-key="outbound-answered-dashboard" data-state="pause"></i>
+									<audio class="shortcut-audio" data-key="outbound-answered-dashboard"
+										src="/audio/sample_audiofile.mp3">
+									</audio>
+								</div>
+								<span class="view-recording text-primary fw-medium" data-bs-toggle="modal"
+									data-bs-target="#dashboard-outbound-answered">View Recording</span>
+							</div>
+							<div class="d-flex text-secondary gap-1 ">
+								<span>2025-01-15 10:30 AM</span>
+								<span>|</span>
+								<span>Agent 1 </span>
+							</div>
+							<div class="d-flex text-secondary gap-1">
+								<span>Call Connected</span>
+								<span>-</span>
+								<span>Duration:</span>
+								<span>5:32 minutes</span>
+							</div>
+							<div class="d-flex flex-column gap-3 ps-4 py-3">
+								<div class="d-flex gap-2">
+									<div class="d-inline">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 22 22" fill="none">
+											<rect x="0.15" y="0.15" width="21.7" height="21.7" rx="10.85"
+												stroke="#FEBC2F" stroke-width="0.3" />
+											<path
+												d="M16.6873 7.75012H12.6248V6.93762H16.6873V7.75012ZM15.8748 10.1876H14.2498V11.0001H15.8748V10.1876ZM12.6248 10.1876H5.31226V11.0001H12.6248V10.1876ZM14.2498 15.0626H5.31226V15.8751H14.2498V15.0626ZM10.1873 12.6251H5.31226V13.4376H10.1873V12.6251ZM16.6873 12.6251H12.6248V13.4376H16.6873V12.6251ZM10.9998 6.12512V8.56262H5.31226V6.12512H10.9998ZM10.1873 6.93762H6.12476V7.75012H10.1873V6.93762Z"
+												fill="#FEBC2F" />
+										</svg>
+									</div>
+									<div class="d-flex flex-column gap-1">
+										<span>Disposition Updated</span>
+										<span class="text-secondary">Follw-up scheduled for next week</span>
+
+									</div>
+								</div>
+								<div class="d-flex gap-2">
+									<div class="d-inline">
+										<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+											viewBox="0 0 22 22" fill="none">
+											<rect x="0.15" y="0.15" width="21.7" height="21.7" rx="10.85"
+												stroke="#FEBC2F" stroke-width="0.3" />
+											<path
+												d="M16.6873 7.75012H12.6248V6.93762H16.6873V7.75012ZM15.8748 10.1876H14.2498V11.0001H15.8748V10.1876ZM12.6248 10.1876H5.31226V11.0001H12.6248V10.1876ZM14.2498 15.0626H5.31226V15.8751H14.2498V15.0626ZM10.1873 12.6251H5.31226V13.4376H10.1873V12.6251ZM16.6873 12.6251H12.6248V13.4376H16.6873V12.6251ZM10.9998 6.12512V8.56262H5.31226V6.12512H10.9998ZM10.1873 6.93762H6.12476V7.75012H10.1873V6.93762Z"
+												fill="#FEBC2F" />
+										</svg>
+									</div>
+									<div class="d-flex flex-column gap-1">
+										<span>Stage Updated</span>
+										<span class="text-secondary">Warm</span>
+
+									</div>
+								</div>
+								<div class="d-flex align-items-center gap-4">
+									<span>Connected On</span>
+									<div class="d-flex align-items-center justify-content-center gap-2">
+										<div class="icon-container">
+											<i class="whatsapp-icon bi bi-whatsapp fs-5" data-bs-toggle="modal"
+												data-bs-target="#dashboard-whatsapp-modal"></i>
+										</div>
+										<div class="icon-container">
+											<i class="sms-icon bi bi-chat-left-dots fs-5" data-bs-toggle="modal"
+												data-bs-target="#dashboard-sms-modal"></i>
+										</div>
+										<div class="icon-container">
+											<i class="msg-icon bi bi-envelope mb-1 fs-5" data-bs-toggle="modal"
+												data-bs-target="#dashboard-email-modal"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="row justify-content-between mt-5">
+					<div class="col-1">
+						<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
+							<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#FF5F57" />
+							<path
+								d="M32 14L14 32M15.912 21.541L18.552 18.901C18.8143 18.6343 18.9998 18.3019 19.089 17.9386C19.1782 17.5754 19.1679 17.1948 19.059 16.837C18.874 16.2283 18.7106 15.6132 18.569 14.993C18.453 14.45 17.976 14 17.42 14H15.912C14.802 14 13.889 14.904 14.011 16.008C14.3546 19.1286 15.5085 22.1051 17.358 24.642M24.458 30.088L27.04 27.506C27.61 26.938 28.461 26.766 29.228 27.01C29.761 27.18 30.398 27.36 31.001 27.47C31.548 27.569 32 28.025 32 28.58V30.088C32 31.198 31.096 32.111 29.992 31.989C25.9092 31.5376 22.1028 29.7063 19.202 26.798"
+								stroke="#FF5F57" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</div>
+					<div class="col-10">
+						<div class="inbound-call-details d-flex flex-column gap-2 border border-secondary p-2 px-3">
+							<div class="d-flex align-items-center justify-content-between">
+								<div class="d-flex align-items-center gap-2">
+									<span class="outbound-title">Outbound Call</span>
+									<i class="play-recording bi bi-play-circle text-primary fs-5"
+										data-key="outbound-unanswered-dashboard" data-state="play"></i>
+									<i class="play-recording bi bi-pause-circle text-primary fs-5 d-none"
+										data-key="outbound-unanswered-dashboard" data-state="pause"></i>
+									<audio class="shortcut-audio" data-key="outbound-unanswered-dashboard"
+										src="/audio/sample_audiofile.mp3">
+									</audio>
+								</div>
+								<span class="view-recording text-primary fw-medium" data-bs-toggle="modal"
+									data-bs-target="#dashboard-outbound-unanswered">View Recording</span>
+							</div>
+							<div class="d-flex text-secondary gap-1 ">
+								<span>2025-01-15 10:30 AM</span>
+
+							</div>
+							<div class="d-flex text-secondary gap-1 mt-1">
+								<span>No Answer</span>
+								<span>-</span>
+								<span>Left Voicemail</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard Outbound  Modal -->
+	<div class="modal fade" id="dashboard-outbound-answered" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Call-modal modal-body p-2 pt-0">
+					<div class="d-flex gap-1">
+						<div class="logo p-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 46 46"
+								fill="none">
+								<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#0A8F08" />
+								<path
+									d="M30.95 32C28.8667 32 26.8083 31.546 24.775 30.638C22.7417 29.73 20.8917 28.4423 19.225 26.775C17.5583 25.1077 16.271 23.2577 15.363 21.225C14.455 19.1923 14.0007 17.134 14 15.05C14 14.75 14.1 14.5 14.3 14.3C14.5 14.1 14.75 14 15.05 14H19.1C19.3333 14 19.5417 14.0793 19.725 14.238C19.9083 14.3967 20.0167 14.584 20.05 14.8L20.7 18.3C20.7333 18.5667 20.725 18.7917 20.675 18.975C20.625 19.1583 20.5333 19.3167 20.4 19.45L17.975 21.9C18.3083 22.5167 18.704 23.1123 19.162 23.687C19.62 24.2617 20.1243 24.816 20.675 25.35C21.1917 25.8667 21.7333 26.346 22.3 26.788C22.8667 27.23 23.4667 27.634 24.1 28L26.45 25.65C26.6 25.5 26.796 25.3877 27.038 25.313C27.28 25.2383 27.5173 25.2173 27.75 25.25L31.2 25.95C31.4333 26.0167 31.625 26.1377 31.775 26.313C31.925 26.4883 32 26.684 32 26.9V30.95C32 31.25 31.9 31.5 31.7 31.7C31.5 31.9 31.25 32 30.95 32ZM17.025 20L18.675 18.35L18.25 16H16.025C16.1083 16.6833 16.225 17.3583 16.375 18.025C16.525 18.6917 16.7417 19.35 17.025 20ZM25.975 28.95C26.625 29.2333 27.2877 29.4583 27.963 29.625C28.6383 29.7917 29.3173 29.9 30 29.95V27.75L27.65 27.275L25.975 28.95Z"
+									fill="#0A8F08" />
+							</svg>
+						</div>
+						<div class="d-flex flex-column gap-5 pe-3">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">Outbound Call</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>Agent 1</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+							<!-- Audio -->
+							<div class="audio-player">
+								<div class="player-container">
+									<div class="progress-section">
+										<div class="progress-bar">
+											<div class="progress-fill">
+												<div class="progress-handle"></div>
+											</div>
+										</div>
+
+										<div class="time-container">
+											<span class="time current-time">0:00</span>
+											<span class="time duration">-0:00</span>
+										</div>
+									</div>
+
+									<button class="play-button">
+										<div class="play-icon"></div>
+										<div class="pause-icon">
+											<span></span>
+											<span></span>
+										</div>
+									</button>
+								</div>
+
+								<audio src="/audio/sample_audiofile.mp3"></audio>
+							</div>
+
+							<div class="d-flex flex-column gap-2 p-2 pe-3">
+								<h4>Transcript</h4>
+								<div class="transcript pe-3">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard Not Assigned < Not Dialed Modal -->
+	<div class="modal fade" id="notdialed-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header border-0 pt-1 pe-2">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="notdialed-modal modal-body pt-0">
+					<div class="d-flex align-items-center gap-4 justify-content-end pe-3" id="lead-tbl-pagination">
+						<div class="page-totals d-flex align-items-center gap-1">
+							<span>1-10</span>
+							<span>of</span>
+							<span>100</span>
+						</div>
+						<div class="d-flex align-items-center gap-4">
+							<div class="pagination-btn">
+								<i class="bi bi-chevron-left"></i>
+							</div>
+							<span>1</span>
+							<div class="pagination-btn">
+								<i class="bi bi-chevron-right"></i>
+							</div>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<select class="border-0 rounded-2 outline-none bg-white"
+								aria-label="Default select example">
+								<option value="10" selected>10 </option>
+								<option value="25">25 </option>
+								<option value="50">50 </option>
+								<option value="100">100 </option>
+							</select>
+							<span>/Page</span>
+
+						</div>
+					</div>
+
+					<div class="notdialed-data-table table-responsive rounded-3">
+						<table cellspacing="5" cellpadding="10"
+							class="notdialed-table table table-hover table-borderless"
+							style="border-radius: 10px !important;">
+							<thead class="">
+								<tr class="border-bottom">
+									<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>S.
+										No.
+									</th>
+									<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+										Source
+										Name
+									</th>
+									<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+										Received
+										Date
+										& Time</th>
+									<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Lead
+										Name
+									</th>
+									<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>Phone
+										No.
+									</th>
+								</tr>
+
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Indiamart</td>
+									<td>2021-02-05 08:28:36</td>
+									<td>John Doe</td>
+									<td>+91 9999999999</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard Not Assigned < Dialed Modal -->
+	<div class="modal fade" id="dialed-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header border-0 pb-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="notdialed-modal modal-body">
+					<div class="attempt-group ">
+						<div id="attempt-boxall" class="attempt-box selected-attempt">
+							<span class="attempt-no">All Attempts</span>
+							<span class="attempt-value">60%</span>
+						</div>
+						<div id="attempt-box1" class="attempt-box">
+							<span class="attempt-no">1st Attempts</span>
+							<span class="attempt-value">80%</span>
+						</div>
+						<div id="attempt-box2" class="attempt-box">
+							<span class="attempt-no">2nd Attempts</span>
+							<span class="attempt-value">50%</span>
+						</div>
+						<div id="attempt-box3" class="attempt-box">
+							<span class="attempt-no">3rd Attempts</span>
+							<span class="attempt-value">50%</span>
+						</div>
+						<div id="attempt-box4" class="attempt-box">
+							<span class="attempt-no">4th Attempts</span>
+							<span class="attempt-value">40%</span>
+						</div>
+						<div id="attempt-box5" class="attempt-box">
+							<span class="attempt-no">5th Attempts</span>
+							<span class="attempt-value">40%</span>
+						</div>
+						<div id="attempt-box6" class="attempt-box">
+							<span class="attempt-no">6th Attempts</span>
+							<span class="attempt-value">30%</span>
+						</div>
+						<div id="attempt-box7" class="attempt-box">
+							<span class="attempt-no">7th Attempts</span>
+							<span class="attempt-value">15%</span>
+						</div>
+						<div id="attempt-box8" class="attempt-box">
+							<span class="attempt-no">8th Attempts</span>
+							<span class="attempt-value">5%</span>
+						</div>
+					</div>
+					<div class="my-2 bg-white rounded-3">
+						<!-- Table Filters -->
+						<div class="d-flex align-items-center justify-content-between p-2">
+
+							<!-- Assig agent container -->
+							<div class="d-flex align-items-center gap-3">
+								<span class="fw-medium">Select No. of Attempts</span>
+								<select id="dialed-attempt"
+									class="agent-selector border rounded-3 p-1 outline-none text-primary pe-3 border-0"
+									aria-label="Default select example">
+									<option value="all">All Attempts</option>
+									<option value="1">1st Attempt</option>
+									<option value="2">2nd Attempt</option>
+									<option value="3">3rd Attempt</option>
+									<option value="4">4th Attempt</option>
+									<option value="5">5th Attempt</option>
+									<option value="6">6th Attempt</option>
+									<option value="7">7th Attempt</option>
+									<option value="8">8th Attempt</option>
+								</select>
+							</div>
+
+							<!-- Pagination -->
+							<div class="d-flex align-items-center gap-4" id="dashboard-tbl-pagination">
+								<div class="page-totals d-flex align-items-center gap-1">
+									<span>1-10</span>
+									<span>of</span>
+									<span>100</span>
+								</div>
+								<div class="d-flex align-items-center gap-4">
+									<div class="pagination-btn">
+										<i class="bi bi-chevron-left"></i>
+									</div>
+									<span>1</span>
+									<div class="pagination-btn">
+										<i class="bi bi-chevron-right"></i>
+									</div>
+								</div>
+								<div class="d-flex align-items-center gap-1">
+									<select class="border-0 rounded-2 outline-none bg-white"
+										aria-label="Default select example">
+										<option value="10" selected>10 </option>
+										<option value="25">25 </option>
+										<option value="50">50 </option>
+										<option value="100">100 </option>
+									</select>
+									<span>/Page</span>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="dialed-data-table table-responsive rounded-3">
+							<table cellspacing="5" cellpadding="10"
+								class="dialed-table table table-hover table-borderless"
+								style="border-radius: 10px !important;">
+								<thead class="">
+									<tr class="border-bottom">
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											S. No.
+										</th>
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											Source
+											Name
+										</th>
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											Received
+											Date
+											& Time</th>
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											Lead Name
+										</th>
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											Phone No.
+										</th>
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											Dialing
+											Date
+											& Time</th>
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											Dialer
+											Disposition</th>
+										<th class="text-capitalize" style="letter-spacing: normal;" scope="col" nowrap>
+											Call Attempts
+										</th>
+									</tr>
+
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>Indiamart</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>John Doe</td>
+										<td>+91 9999999999</td>
+										<td>2021-02-05 08:28:36</td>
+										<td>Interested in demo</td>
+										<td>1</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard Outbound Unanswered Modal -->
+	<div class="modal fade" id="dashboard-outbound-unanswered" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Call-modal modal-body p-2 pt-0">
+					<div class="d-flex gap-1">
+						<div class="logo p-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 46 46"
+								fill="none">
+								<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#FF5F57" />
+								<path
+									d="M32 14L14 32M15.912 21.541L18.552 18.901C18.8143 18.6343 18.9998 18.3019 19.089 17.9386C19.1782 17.5754 19.1679 17.1948 19.059 16.837C18.874 16.2283 18.7106 15.6132 18.569 14.993C18.453 14.45 17.976 14 17.42 14H15.912C14.802 14 13.889 14.904 14.011 16.008C14.3546 19.1286 15.5085 22.1051 17.358 24.642M24.458 30.088L27.04 27.506C27.61 26.938 28.461 26.766 29.228 27.01C29.761 27.18 30.398 27.36 31.001 27.47C31.548 27.569 32 28.025 32 28.58V30.088C32 31.198 31.096 32.111 29.992 31.989C25.9092 31.5376 22.1028 29.7063 19.202 26.798"
+									stroke="#FF5F57" stroke-width="1.5" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+						</div>
+						<div class="d-flex flex-column gap-5 pe-3">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">Outbound Call</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+							<!-- Audio -->
+							<div class="audio-player">
+								<div class="player-container">
+									<div class="progress-section">
+										<div class="progress-bar">
+											<div class="progress-fill">
+												<div class="progress-handle"></div>
+											</div>
+										</div>
+
+										<div class="time-container">
+											<span class="time current-time">0:00</span>
+											<span class="time duration">-0:00</span>
+										</div>
+									</div>
+
+									<button class="play-button">
+										<div class="play-icon"></div>
+										<div class="pause-icon">
+											<span></span>
+											<span></span>
+										</div>
+									</button>
+								</div>
+
+								<audio src="/audio/sample_audiofile.mp3"></audio>
+							</div>
+
+							<div class="d-flex flex-column gap-2 p-2 pe-3">
+								<h4>Transcript</h4>
+								<div class="transcript pe-3">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard SMS Modal -->
+	<div class="modal fade" id="dashboard-sms-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Sms-modal modal-body p-2 pt-0 pb-4">
+					<div class="d-flex gap-1">
+						<div class="logo p-3 pt-2">
+							<img src="/Svg/sms-large-icon.svg" alt="">
+						</div>
+						<div class="d-flex flex-column gap-5 pe-5 w-100">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">SMS</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>Agent 1</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+
+							<div class="sms-preview">
+								<div class="sms-group">
+
+									<span class="sms-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="sms-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="sms-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="sms-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="sms-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="sms-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+									<span class="sms-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="sms-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="sms-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="sms-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="sms-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="sms-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard Whatsapp Modal -->
+	<div class="modal fade" id="dashboard-whatsapp-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Sms-modal modal-body p-2 pt-0 pb-4">
+					<div class="d-flex gap-1">
+						<div class="logo p-3 pt-2">
+							<img src="/Svg/whatsapp-large-icon.svg" alt="">
+						</div>
+						<div class="d-flex flex-column gap-5 pe-5 w-100">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">WhatsApp Message</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>Agent 1</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+
+							<div class="whatsapp-preview">
+								<div class="whatsapp-group">
+									<span class="whatsapp-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="whatsapp-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="whatsapp-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+									<span class="whatsapp-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="whatsapp-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="whatsapp-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard Email Modal -->
+	<div class="modal fade" id="dashboard-email-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Sms-modal modal-body p-2 pt-0 pb-4">
+					<div class="d-flex gap-1">
+						<div class="logo p-3 pt-0">
+							<img src="/Svg/email-large-icon.svg" alt="">
+						</div>
+						<div class="d-flex flex-column gap-5 pe-5 w-100">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">Email</h2>
+							</div>
+							<div class="email-preview">
+								<div class="d-flex gap-2">
+									<div class="pt-5">
+										<img src="/Svg/avatar.svg" alt="">
+									</div>
+									<div class="w-100">
+										<div class="email-header">
+											<h2 class="email-subject">Email Subject</h2>
+											<div class="d-flex gap-3 align-items-center">
+												<span class="email-time">2025-01-15 · 10:30 AM (8 hours ago)</span>
+												<i class="bi bi-three-dots-vertical text-secondary"></i>
+											</div>
+										</div>
+
+										<div class="email-meta">
+											<div class="email-meta-info">
+												<p><span class="sample fw-bold">From:</span> <span
+														class="bold">Recipient Name</span>
+													&lt;email@domain.com&gt;</p>
+												<p><span class="sample fw-bold">To:</span> <span class="bold">Receiver
+														Name</span>
+													&lt;email@domain.com&gt;</p>
+											</div>
+										</div>
+
+										<div class="email-body">
+											<div>
+												Hi John,
+
+												I hope you're doing well.
+												I wanted to follow up on the Q4 Marketing Campaign deliverables. The
+												team has finalized the creatives, and the analytics dashboard has
+												updated with the latest engagement metrics.
+												Please review the final creative set, the performance report covering
+												and conversion trends, and the budget allocation summary for Q1.
+												If everything looks good, we'll proceed to schedule the rollout on 18th.
+
+												Thanks,
+												Sarah Mitchell
+												Marketing Manager
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Lead Dashboard Modals Ends-->
+
+
+	<!-- All Lead Status Modals Below -->
+	<!-- Status Right Offcanvas Modal -->
+	<div class="lead-detail offcanvas offcanvas-end" tabindex="-1" id="detailLead" aria-labelledby="detailLeadLabel">
+		<div class="offcanvas-header position-relative">
+			<div class="lead-detail-header d-flex justify-content-between border w-100">
+				<div class=" d-flex flex-column p-3">
+					<h2>John Doe</h2>
+					<span>+91 9999999999</span>
+				</div>
+			</div>
+			<button type="button" class="close-lead-offcanvas text-white fs-4" data-bs-dismiss="offcanvas"
+				aria-label="Close">
+				<i class="bi bi-x-circle-fill"></i></button>
+
+		</div>
+		<div class="right-sidebar offcanvas-body pt-0">
+			<div class="row g-2 lead-basic-details">
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Lead Source</span>
+						<h5>Indiamart</h5>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Stage</span>
+						<h5>Stage 1</h5>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Assigned To</span>
+						<h5>John Doe</h5>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="table-group-item d-flex flex-column align-items-center p-1 px-3">
+						<span class="lead-box-title">Total Attempts</span>
+						<h5>3</h5>
+					</div>
+				</div>
+			</div>
+			<div class="gradient-line my-4"></div>
+			<div class="d-flex flex-row align-items-center gap-4">
+				<h3>Activity</h3>
+				<select class="form-select form-select-sm pe-5 border rounded-3 w-auto">
+					<option value="latest">Latest</option>
+					<option value="oldest">Oldest</option>
+				</select>
+			</div>
+
+			<div class="call-details">
+				<div class="outbound-call row justify-content-between mt-5 ">
+					<div class="col-1 position-relative">
+						<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
+							<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#0A8F08" />
+							<path
+								d="M30.95 32C28.8667 32 26.8083 31.546 24.775 30.638C22.7417 29.73 20.8917 28.4423 19.225 26.775C17.5583 25.1077 16.271 23.2577 15.363 21.225C14.455 19.1923 14.0007 17.134 14 15.05C14 14.75 14.1 14.5 14.3 14.3C14.5 14.1 14.75 14 15.05 14H19.1C19.3333 14 19.5417 14.0793 19.725 14.238C19.9083 14.3967 20.0167 14.584 20.05 14.8L20.7 18.3C20.7333 18.5667 20.725 18.7917 20.675 18.975C20.625 19.1583 20.5333 19.3167 20.4 19.45L17.975 21.9C18.3083 22.5167 18.704 23.1123 19.162 23.687C19.62 24.2617 20.1243 24.816 20.675 25.35C21.1917 25.8667 21.7333 26.346 22.3 26.788C22.8667 27.23 23.4667 27.634 24.1 28L26.45 25.65C26.6 25.5 26.796 25.3877 27.038 25.313C27.28 25.2383 27.5173 25.2173 27.75 25.25L31.2 25.95C31.4333 26.0167 31.625 26.1377 31.775 26.313C31.925 26.4883 32 26.684 32 26.9V30.95C32 31.25 31.9 31.5 31.7 31.7C31.5 31.9 31.25 32 30.95 32ZM17.025 20L18.675 18.35L18.25 16H16.025C16.1083 16.6833 16.225 17.3583 16.375 18.025C16.525 18.6917 16.7417 19.35 17.025 20ZM25.975 28.95C26.625 29.2333 27.2877 29.4583 27.963 29.625C28.6383 29.7917 29.3173 29.9 30 29.95V27.75L27.65 27.275L25.975 28.95Z"
+								fill="#0A8F08" />
+						</svg>
+						<div class="outbound-call-line"></div>
+					</div>
+					<div class="col-10">
+						<div class="outbound-call-details d-flex flex-column gap-2 border border-secondary p-2 px-3">
+							<div class="d-flex align-items-center justify-content-between">
+								<div class="d-flex align-items-center gap-2">
+									<span class="outbound-title">Outbound Call</span>
+									<i class="play-recording bi bi-play-circle text-primary fs-5"
+										data-key="outbound-answered-lead" data-state="play"></i>
+									<i class="play-recording bi bi-pause-circle text-primary fs-5 d-none"
+										data-key="outbound-answered-lead" data-state="pause"></i>
+									<audio class="shortcut-audio" data-key="outbound-answered-lead"
+										src="/audio/sample_audiofile.mp3">
+									</audio>
+								</div>
+								<span class="view-recording text-primary fw-medium" data-bs-toggle="modal"
+									data-bs-target="#outbound-recording-answered">View Recording</span>
+							</div>
+							<div class="d-flex text-secondary gap-1 ">
+								<span>2025-01-15 10:30 AM</span>
+								<span>|</span>
+								<span>Agent 1 </span>
+							</div>
+							<div class="d-flex text-secondary gap-1">
+								<span>Call Connected</span>
+								<span>-</span>
+								<span>Duration:</span>
+								<span>5:32 minutes</span>
+							</div>
+							<div class="d-flex flex-column gap-3 ps-4 py-3">
+								<div class="d-flex gap-2">
+									<div class="d-inline">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 22 22" fill="none">
+											<rect x="0.15" y="0.15" width="21.7" height="21.7" rx="10.85"
+												stroke="#FEBC2F" stroke-width="0.3" />
+											<path
+												d="M16.6873 7.75012H12.6248V6.93762H16.6873V7.75012ZM15.8748 10.1876H14.2498V11.0001H15.8748V10.1876ZM12.6248 10.1876H5.31226V11.0001H12.6248V10.1876ZM14.2498 15.0626H5.31226V15.8751H14.2498V15.0626ZM10.1873 12.6251H5.31226V13.4376H10.1873V12.6251ZM16.6873 12.6251H12.6248V13.4376H16.6873V12.6251ZM10.9998 6.12512V8.56262H5.31226V6.12512H10.9998ZM10.1873 6.93762H6.12476V7.75012H10.1873V6.93762Z"
+												fill="#FEBC2F" />
+										</svg>
+									</div>
+									<div class="d-flex flex-column gap-1">
+										<span>Disposition Updated</span>
+										<span class="text-secondary">Follw-up scheduled for next week</span>
+
+									</div>
+								</div>
+								<div class="d-flex gap-2">
+									<div class="d-inline">
+										<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+											viewBox="0 0 22 22" fill="none">
+											<rect x="0.15" y="0.15" width="21.7" height="21.7" rx="10.85"
+												stroke="#FEBC2F" stroke-width="0.3" />
+											<path
+												d="M16.6873 7.75012H12.6248V6.93762H16.6873V7.75012ZM15.8748 10.1876H14.2498V11.0001H15.8748V10.1876ZM12.6248 10.1876H5.31226V11.0001H12.6248V10.1876ZM14.2498 15.0626H5.31226V15.8751H14.2498V15.0626ZM10.1873 12.6251H5.31226V13.4376H10.1873V12.6251ZM16.6873 12.6251H12.6248V13.4376H16.6873V12.6251ZM10.9998 6.12512V8.56262H5.31226V6.12512H10.9998ZM10.1873 6.93762H6.12476V7.75012H10.1873V6.93762Z"
+												fill="#FEBC2F" />
+										</svg>
+									</div>
+									<div class="d-flex flex-column gap-1">
+										<span>Stage Updated</span>
+										<span class="text-secondary">Warm</span>
+
+									</div>
+								</div>
+								<div class="d-flex align-items-center gap-4">
+									<span>Connected On</span>
+									<div class="d-flex align-items-center justify-content-center gap-2">
+										<div class="icon-container">
+											<i class="whatsapp-icon bi bi-whatsapp fs-5" data-bs-toggle="modal"
+												data-bs-target="#whatsapp-modal"></i>
+										</div>
+										<div class="icon-container">
+											<i class="sms-icon bi bi-chat-left-dots fs-5" data-bs-toggle="modal"
+												data-bs-target="#sms-modal"></i>
+										</div>
+										<div class="icon-container">
+											<i class="msg-icon bi bi-envelope fs-5 mb-1" data-bs-toggle="modal"
+												data-bs-target="#email-modal"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="row justify-content-between mt-5">
+					<div class="col-1">
+						<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
+							<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#FF5F57" />
+							<path
+								d="M32 14L14 32M15.912 21.541L18.552 18.901C18.8143 18.6343 18.9998 18.3019 19.089 17.9386C19.1782 17.5754 19.1679 17.1948 19.059 16.837C18.874 16.2283 18.7106 15.6132 18.569 14.993C18.453 14.45 17.976 14 17.42 14H15.912C14.802 14 13.889 14.904 14.011 16.008C14.3546 19.1286 15.5085 22.1051 17.358 24.642M24.458 30.088L27.04 27.506C27.61 26.938 28.461 26.766 29.228 27.01C29.761 27.18 30.398 27.36 31.001 27.47C31.548 27.569 32 28.025 32 28.58V30.088C32 31.198 31.096 32.111 29.992 31.989C25.9092 31.5376 22.1028 29.7063 19.202 26.798"
+								stroke="#FF5F57" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</div>
+					<div class="col-10">
+						<div class="inbound-call-details d-flex flex-column gap-2 border border-secondary p-2 px-3">
+							<div class="d-flex align-items-center justify-content-between">
+								<div class="d-flex align-items-center gap-2">
+									<span class="outbound-title">Outbound Call</span>
+									<i class="play-recording bi bi-play-circle text-primary fs-5"
+										data-key="outbound-unanswered-lead" data-state="play"></i>
+									<i class="play-recording bi bi-pause-circle text-primary fs-5 d-none"
+										data-key="outbound-unanswered-lead" data-state="pause"></i>
+									<audio class="shortcut-audio" data-key="outbound-unanswered-lead"
+										src="/audio/sample_audiofile.mp3">
+									</audio>
+								</div>
+								<span class="view-recording text-primary fw-medium" data-bs-toggle="modal"
+									data-bs-target="#outbound-recording-unanswered">View Recording</span>
+							</div>
+							<div class="d-flex text-secondary gap-1 ">
+								<span>2025-01-15 10:30 AM</span>
+
+							</div>
+							<div class="d-flex text-secondary gap-1 mt-1">
+								<span>No Answer</span>
+								<span>-</span>
+								<span>Left Voicemail</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Status Outbound  Modal -->
+	<div class="modal fade" id="outbound-recording-answered" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Call-modal modal-body p-2 pt-0">
+					<div class="d-flex gap-1">
+						<div class="logo p-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 46 46"
+								fill="none">
+								<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#0A8F08" />
+								<path
+									d="M30.95 32C28.8667 32 26.8083 31.546 24.775 30.638C22.7417 29.73 20.8917 28.4423 19.225 26.775C17.5583 25.1077 16.271 23.2577 15.363 21.225C14.455 19.1923 14.0007 17.134 14 15.05C14 14.75 14.1 14.5 14.3 14.3C14.5 14.1 14.75 14 15.05 14H19.1C19.3333 14 19.5417 14.0793 19.725 14.238C19.9083 14.3967 20.0167 14.584 20.05 14.8L20.7 18.3C20.7333 18.5667 20.725 18.7917 20.675 18.975C20.625 19.1583 20.5333 19.3167 20.4 19.45L17.975 21.9C18.3083 22.5167 18.704 23.1123 19.162 23.687C19.62 24.2617 20.1243 24.816 20.675 25.35C21.1917 25.8667 21.7333 26.346 22.3 26.788C22.8667 27.23 23.4667 27.634 24.1 28L26.45 25.65C26.6 25.5 26.796 25.3877 27.038 25.313C27.28 25.2383 27.5173 25.2173 27.75 25.25L31.2 25.95C31.4333 26.0167 31.625 26.1377 31.775 26.313C31.925 26.4883 32 26.684 32 26.9V30.95C32 31.25 31.9 31.5 31.7 31.7C31.5 31.9 31.25 32 30.95 32ZM17.025 20L18.675 18.35L18.25 16H16.025C16.1083 16.6833 16.225 17.3583 16.375 18.025C16.525 18.6917 16.7417 19.35 17.025 20ZM25.975 28.95C26.625 29.2333 27.2877 29.4583 27.963 29.625C28.6383 29.7917 29.3173 29.9 30 29.95V27.75L27.65 27.275L25.975 28.95Z"
+									fill="#0A8F08" />
+							</svg>
+						</div>
+						<div class="d-flex flex-column gap-5 pe-3">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">Outbound Call</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>Agent 1</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+							<!-- Audio -->
+							<div class="audio-player">
+								<div class="player-container">
+									<div class="progress-section">
+										<div class="progress-bar">
+											<div class="progress-fill">
+												<div class="progress-handle"></div>
+											</div>
+										</div>
+
+										<div class="time-container">
+											<span class="time current-time">0:00</span>
+											<span class="time duration">-0:00</span>
+										</div>
+									</div>
+
+									<button class="play-button">
+										<div class="play-icon"></div>
+										<div class="pause-icon">
+											<span></span>
+											<span></span>
+										</div>
+									</button>
+								</div>
+
+								<audio src="/audio/sample_audiofile.mp3"></audio>
+							</div>
+
+							<div class="d-flex flex-column gap-2 p-2 pe-3">
+								<h4>Transcript</h4>
+								<div class="transcript pe-3">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Status Outbound Unanswered Modal -->
+	<div class="modal fade" id="outbound-recording-unanswered" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Call-modal modal-body p-2 pt-0">
+					<div class="d-flex gap-1">
+						<div class="logo p-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 46 46"
+								fill="none">
+								<rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#FF5F57" />
+								<path
+									d="M32 14L14 32M15.912 21.541L18.552 18.901C18.8143 18.6343 18.9998 18.3019 19.089 17.9386C19.1782 17.5754 19.1679 17.1948 19.059 16.837C18.874 16.2283 18.7106 15.6132 18.569 14.993C18.453 14.45 17.976 14 17.42 14H15.912C14.802 14 13.889 14.904 14.011 16.008C14.3546 19.1286 15.5085 22.1051 17.358 24.642M24.458 30.088L27.04 27.506C27.61 26.938 28.461 26.766 29.228 27.01C29.761 27.18 30.398 27.36 31.001 27.47C31.548 27.569 32 28.025 32 28.58V30.088C32 31.198 31.096 32.111 29.992 31.989C25.9092 31.5376 22.1028 29.7063 19.202 26.798"
+									stroke="#FF5F57" stroke-width="1.5" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+						</div>
+						<div class="d-flex flex-column gap-5 pe-3">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">Outbound Call</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+							<!-- Audio -->
+							<div class="audio-player">
+								<div class="player-container">
+									<div class="progress-section">
+										<div class="progress-bar">
+											<div class="progress-fill">
+												<div class="progress-handle"></div>
+											</div>
+										</div>
+
+										<div class="time-container">
+											<span class="time current-time">0:00</span>
+											<span class="time duration">-0:00</span>
+										</div>
+									</div>
+
+									<button class="play-button">
+										<div class="play-icon"></div>
+										<div class="pause-icon">
+											<span></span>
+											<span></span>
+										</div>
+									</button>
+								</div>
+
+								<audio src="/audio/sample_audiofile.mp3"></audio>
+							</div>
+
+							<div class="d-flex flex-column gap-2 p-2 pe-3">
+								<h4>Transcript</h4>
+								<div class="transcript pe-3">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+									Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+									Lorem Lorem Lorem
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Status SMS Modal -->
+	<div class="modal fade" id="sms-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Sms-modal modal-body p-2 pt-0 pb-4">
+					<div class="d-flex gap-1">
+						<div class="logo p-3 pt-2">
+							<img src="/Svg/sms-large-icon.svg" alt="">
+						</div>
+						<div class="d-flex flex-column gap-5 pe-5 w-100">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">SMS</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>Agent 1</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+
+							<div class="sms-preview">
+								<div class="sms-group">
+
+									<span class="sms-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="sms-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="sms-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="sms-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="sms-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="sms-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+									<span class="sms-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="sms-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="sms-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="sms-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="sms-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="sms-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Status Whatsapp Modal -->
+	<div class="modal fade" id="whatsapp-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Sms-modal modal-body p-2 pt-0 pb-4">
+					<div class="d-flex gap-1">
+						<div class="logo p-3 pt-2">
+							<img src="/Svg/whatsapp-large-icon.svg" alt="">
+						</div>
+						<div class="d-flex flex-column gap-5 pe-5 w-100">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">WhatsApp Message</h2>
+								<div class="outbound-call-modal d-flex gap-1 align-items-center text-secondary">
+									<span>2025-01-15 10:30 AM</span>
+									<span>|</span>
+									<span>Agent 1</span>
+									<span>|</span>
+									<span>+91 9999999999</span>
+								</div>
+							</div>
+
+							<div class="whatsapp-preview">
+								<div class="whatsapp-group">
+									<span class="whatsapp-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="whatsapp-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="whatsapp-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+									<span class="whatsapp-item received">
+										Hey! Did you check the new campaign update?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Yes, just reviewed it. The visuals look great!
+									</span>
+
+									<span class="whatsapp-item received">
+										Perfect. Can you share the final report link?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Sure — here's the file: <span class="text-link">bit.ly/report2025</span>
+									</span>
+
+									<span class="whatsapp-item received">
+										Awesome. Let's sync at 4 PM then?
+									</span>
+
+									<span class="whatsapp-item sent">
+										Works for me. See you at 4 PM.
+									</span>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Status Email Modal -->
+	<div class="modal fade" id="email-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header pe-2 p-0 border-0">
+					<button type="button" class="btn p-0 border-0 ms-auto" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle fs-4 text-danger"></i>
+					</button>
+				</div>
+				<div class="Sms-modal modal-body p-2 pt-0 pb-4">
+					<div class="d-flex gap-1">
+						<div class="logo p-3 pt-0">
+							<img src="/Svg/email-large-icon.svg" alt="">
+						</div>
+						<div class="d-flex flex-column gap-5 pe-5 w-100">
+							<div class="d-flex flex-column">
+								<h2 class="m-0 fw-medium">Email</h2>
+							</div>
+							<div class="email-preview">
+								<div class="d-flex gap-2">
+									<div class="pt-5">
+										<img src="/Svg/avatar.svg" alt="">
+									</div>
+									<div class="w-100">
+										<div class="email-header">
+											<h2 class="email-subject">Email Subject</h2>
+											<div class="d-flex gap-3 align-items-center">
+												<span class="email-time">2025-01-15 · 10:30 AM (8 hours ago)</span>
+												<i class="bi bi-three-dots-vertical text-secondary"></i>
+											</div>
+										</div>
+
+										<div class="email-meta">
+											<div class="email-meta-info">
+												<p><span class="sample fw-bold">From:</span> <span
+														class="bold">Recipient Name</span>
+													&lt;email@domain.com&gt;</p>
+												<p><span class="sample fw-bold">To:</span> <span class="bold">Receiver
+														Name</span>
+													&lt;email@domain.com&gt;</p>
+											</div>
+										</div>
+
+										<div class="email-body">
+											<div>
+												Hi John,
+
+												I hope you're doing well.
+												I wanted to follow up on the Q4 Marketing Campaign deliverables. The
+												team has finalized the creatives, and the analytics dashboard has
+												updated with the latest engagement metrics.
+												Please review the final creative set, the performance report covering
+												and conversion trends, and the budget allocation summary for Q1.
+												If everything looks good, we'll proceed to schedule the rollout on 18th.
+
+												Thanks,
+												Sarah Mitchell
+												Marketing Manager
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+	<!-- Picks all audios -->
+	<script>
+		const ALL_AUDIOS = new Set();
+
+		function resetShortcutIcons(key) {
+			document
+				.querySelectorAll(`.play-recording[data-key="${key}"][data-state="play"]`)
+				.forEach(i => i.classList.remove('d-none'));
+
+			document
+				.querySelectorAll(`.play-recording[data-key="${key}"][data-state="pause"]`)
+				.forEach(i => i.classList.add('d-none'));
+		}
+
+		function stopAllAudios() {
+			ALL_AUDIOS.forEach(audio => {
+				audio.pause();
+				audio.currentTime = 0;
+				resetShortcutIcons(audio.dataset.key);
+			});
+		}
+
+		document.querySelectorAll('.shortcut-audio').forEach(audio => {
+			ALL_AUDIOS.add(audio);
+
+			audio.addEventListener('ended', () => {
+				resetShortcutIcons(audio.dataset.key);
+			});
+		});
+
+		document.addEventListener('click', function (e) {
+			const btn = e.target.closest('.play-recording');
+			if (!btn) return;
+
+			const key = btn.dataset.key;
+			const audio = document.querySelector(`audio[data-key="${key}"]`);
+			if (!audio) return;
+
+			// Pause everything else first
+			ALL_AUDIOS.forEach(a => {
+				if (a !== audio) {
+					a.pause();
+					a.currentTime = 0;
+					resetShortcutIcons(a.dataset.key);
+				}
+			});
+
+			// Toggle current audio
+			if (audio.paused) {
+				audio.play();
+				resetShortcutIcons(key);
+				document
+					.querySelector(`.play-recording[data-key="${key}"][data-state="play"]`)
+					.classList.add('d-none');
+				document
+					.querySelector(`.play-recording[data-key="${key}"][data-state="pause"]`)
+					.classList.remove('d-none');
+			} else {
+				audio.pause();
+				audio.currentTime = 0;
+				resetShortcutIcons(key);
+			}
+		});
+
+		// ---------- STOP ON MODAL CLOSE ----------
+		document.addEventListener('hidden.bs.modal', stopAllAudios);
+
+		// ---------- STOP ON OFFCANVAS CLOSE ----------
+		document.addEventListener('hidden.bs.offcanvas', stopAllAudios);
+
+		// ---------- STOP WHEN OPENING MODAL ----------
+		document.addEventListener('click', function (e) {
+			if (e.target.closest('[data-bs-toggle="modal"]')) {
+				stopAllAudios();
+			}
+		});
+	</script>
+
+
+
+	<!-- Tab Switching (Dashboard and Status) -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const dashboardTab = document.getElementById('lead-dashboard-tab');
+			const leadStatusTab = document.getElementById('lead-status-tab');
+			const dashboardPanel = document.getElementById('dashboard-panel');
+			const leadStatusPanel = document.getElementById('lead-status-panel');
+
+			// Set dashboard as default active
+			dashboardTab.classList.add('active-lead-tab');
+			dashboardPanel.style.display = 'block';
+			leadStatusPanel.style.display = 'none';
+
+			// Tab switching logic
+			dashboardTab.addEventListener('click', () => {
+				dashboardTab.classList.add('active-lead-tab');
+				leadStatusTab.classList.remove('active-lead-tab');
+
+				dashboardPanel.style.display = 'block';
+				leadStatusPanel.style.display = 'none';
+			});
+
+			leadStatusTab.addEventListener('click', () => {
+				leadStatusTab.classList.add('active-lead-tab');
+				dashboardTab.classList.remove('active-lead-tab');
+
+				leadStatusPanel.style.display = 'block';
+				dashboardPanel.style.display = 'none';
+			});
+		});
+	</script>
+
+	<!-- For campaign graph -->
+	<script>
+		// Stores the names of the currently selected campaigns/columns
+		let selectedCampaigns = new Set();
+		const chartData = [
+			['abd', 37],
+			['jehqi', 31],
+			['ioewn', 27],
+			['dhdb', 22],
+			['hajsd', 21],
+			['asdjha', 21],
+			['krif', 21],
+			['sand', 20],
+			['bioe', 20],
+			['ornh', 19],
+			['asd', 16],
+			['hajsad', 16],
+			['ahjkdh', 15],
+			['sad', 15],
+			['sdw', 14],
+			['hg', 14],
+			['th', 14],
+			['rtyw', 14],
+			['nnh', 13],
+			['pkkkr', 13]
+		];
+		const xAxisMax = Math.ceil(chartData.length * 1.2) - 1;
+		const maxYValue = Math.max(...chartData.map(item => item[1]));
+		const yAxisMax = Math.ceil(maxYValue * 1.1);
+
+		function applyColumnStyles(chart) {
+			const hasActiveSelection = selectedCampaigns.size > 0;
+			const highlightFilter = 'drop-shadow(0 0 6px rgba(155, 32, 217, 0.7))';
+
+			chart.series[0].points.forEach(point => {
+				const isSelected = selectedCampaigns.has(point.name);
+
+				const targetOpacity = isSelected ? 1 : (hasActiveSelection ? 0.25 : 1);
+				const targetFilter = isSelected ? highlightFilter : 'none';
+
+				if (point.graphic) {
+					point.graphic.attr({
+						opacity: targetOpacity,
+						filter: targetFilter
+					});
+					point.graphic.css({ cursor: 'pointer' });
+				}
+			});
+		}
+
+		function initializeHighchart() {
+			const chart = Highcharts.chart('campaign-graph', {
+				chart: {
+					type: 'column',
+					events: {
+						redraw: function () {
+							applyColumnStyles(this);
+						}
+					}
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					type: 'category',
+					max: xAxisMax,
+					title: {
+						text: ''
+					},
+					labels: {
+						autoRotation: [45, -90],
+						style: {
+							fontSize: '13px',
+							fontFamily: 'Verdana, sans-serif'
+						},
+						formatter: function () {
+							if (this.pos >= chartData.length) {
+								return '';
+							}
+							return this.value;
+						}
+					}
+				},
+				yAxis: {
+					min: 0,
+					max: yAxisMax,
+					title: {
+						text: 'Sources'
+					}
+				},
+				legend: {
+					enabled: false
+				},
+				tooltip: {
+					pointFormat: 'Total Source: <b>{point.y}</b>'
+				},
+				plotOptions: {
+					series: {
+						stickyTracking: false,
+						states: {
+							inactive: {
+								opacity: 1
+							},
+							hover: {
+								enabled: true,
+								brightness: 0.1
+							}
+						},
+						point: {
+							events: {
+								mouseOut: function () {
+									this.setState('');
+									applyColumnStyles(this.series.chart);
+								}
+							}
+						}
+					}
+				},
+				series: [{
+					name: 'Population',
+					colors: [
+						'#9b20d9', '#9215ac', '#861ec9', '#7a17e6', '#7010f9', '#691af3',
+						'#6225ed', '#5b30e7', '#533be1', '#4c46db', '#4551d5', '#3e5ccf',
+						'#3667c9', '#2f72c3', '#277dbd', '#1f88b7', '#1693b1', '#0a9eaa',
+						'#03c69b', '#00f194'
+					],
+					colorByPoint: true,
+					groupPadding: 0,
+					data: chartData,
+					dataLabels: {
+						enabled: false
+					},
+					point: {
+						events: {
+							click: function () {
+								const pointName = this.name;
+								if (selectedCampaigns.has(pointName)) {
+									selectedCampaigns.delete(pointName);
+								} else {
+									selectedCampaigns.add(pointName);
+								}
+								this.series.chart.redraw();
+							}
+						}
+					}
+				}],
+				credits: { enabled: false }
+			});
+
+			return chart;
+		}
+		const myChart = initializeHighchart();
+	</script>
+
+	<!-- Dashboard Pie Chart -->
+	<script>
+		let selectedSlices = new Set();
+		function refreshSlices(chart) {
+			const hasActiveSelection = selectedSlices.size > 0;
+			const highlightFilter = 'drop-shadow(0 0 6px rgba(137, 121, 255, 0.8))';
+
+			chart.series[0].points.forEach(point => {
+				if (point.graphic) {
+					const isSelected = selectedSlices.has(point.name);
+					const targetOpacity = isSelected ? 1 : (hasActiveSelection ? 0.25 : 1);
+					const targetFilter = isSelected ? highlightFilter : 'none';
+
+					point.graphic.element.setAttribute('opacity', targetOpacity);
+					point.graphic.element.setAttribute('filter', targetFilter);
+					point.graphic.css({ cursor: 'pointer' });
+				}
+			});
+		}
+
+		Highcharts.chart('pieChart', {
+			chart: {
+				type: 'variablepie',
+				events: {
+					render: function () {
+						refreshSlices(this);
+					}
+				}
+			},
+			title: { text: '' },
+			plotOptions: {
+				variablepie: {
+					slicedOffset: 0,
+					states: {
+						inactive: { enabled: false },
+						hover: {
+							brightness: 0.1,
+							halo: null
+						}
+					},
+					point: {
+						events: {
+							click: function () {
+								const name = this.name;
+								if (selectedSlices.has(name)) {
+									selectedSlices.delete(name);
+								} else {
+									selectedSlices.add(name);
+								}
+								this.series.chart.redraw();
+							}
+						}
+					}
+				}
+			},
+			series: [{
+				minPointSize: 10,
+				innerSize: '20%',
+				zMin: 0,
+				data: [
+					{ name: 'IndiaMart: 36%', y: 20, z: 95 },
+					{ name: 'Justdial: 36%', y: 50, z: 118 },
+					{ name: 'Website 36%', y: 30, z: 131 },
+				],
+				colors: ['#3CC3DF', '#8979FF', '#FF928A'],
+				colorByPoint: true
+			}],
+			tooltip: {
+				headerFormat: '',
+				pointFormat: '{point.name}: <b>{point.y}</b>'
+			},
+			credits: { enabled: false }
+		});
+	</script>
+
+
+	<!-- Date Picker Phase 2 -->
+	<script>
+		// Date Picker Script with Custom Month/Year Dropdowns
+		document.querySelectorAll('.date-picker-container').forEach(initDatePicker);
+
+		function initDatePicker(container) {
+			let currentDate = new Date();
+			let startDate = null;
+			let endDate = null;
+			let selectingStart = true;
+			let activeFilter = null;
+
+			const startInput = container.querySelector('.start-date');
+			const endInput = container.querySelector('.end-date');
+			const calendar = container.querySelector('.calendar');
+			const calendarDays = container.querySelector('.calendar-days');
+			const monthSelect = container.querySelector('.month-select');
+			const yearSelect = container.querySelector('.year-select');
+
+			const prevMonthBtn = container.querySelector('.prev-month');
+			const nextMonthBtn = container.querySelector('.next-month');
+			const calendarIcon = container.querySelector('.calendar-icon');
+
+			// Get arrow separators
+			const arrowSeparators = container.querySelectorAll('.arrow-separator');
+			const leftArrow = arrowSeparators[0];
+			const rightArrow = arrowSeparators[1];
+
+			const filterRow = container.previousElementSibling;
+			const filterDays = filterRow ? filterRow.querySelectorAll('.filter-day') : [];
+
+			// Initialize custom dropdowns
+			function initCustomDropdowns() {
+				// Initialize year dropdown
+				const currentYear = new Date().getFullYear();
+				const yearOptions = yearSelect.querySelector('.custom-select-options');
+				yearOptions.innerHTML = '';
+
+				for (let year = currentYear; year >= 1990; year--) {
+					const option = document.createElement('div');
+					option.className = 'custom-option';
+					option.dataset.value = year;
+					option.textContent = year;
+					yearOptions.appendChild(option);
+				}
+
+				// Setup custom select functionality
+				setupCustomSelect(monthSelect);
+				setupCustomSelect(yearSelect);
+			}
+
+			function setupCustomSelect(selectEl) {
+				const trigger = selectEl.querySelector('.custom-select-trigger');
+				const options = selectEl.querySelectorAll('.custom-option');
+
+				trigger.onclick = (e) => {
+					e.stopPropagation();
+					// Close other dropdowns
+					document.querySelectorAll('.custom-select.open').forEach(el => {
+						if (el !== selectEl) el.classList.remove('open');
+					});
+					selectEl.classList.toggle('open');
+				};
+
+				options.forEach(option => {
+					option.onclick = (e) => {
+						e.stopPropagation();
+						const value = option.dataset.value;
+						const selectedValue = selectEl.querySelector('.selected-value');
+						selectedValue.textContent = option.textContent;
+
+						// Remove previous selection
+						selectEl.querySelectorAll('.custom-option').forEach(opt =>
+							opt.classList.remove('selected')
+						);
+						option.classList.add('selected');
+
+						selectEl.classList.remove('open');
+
+						// Trigger change event
+						if (selectEl.classList.contains('month-select')) {
+							currentDate.setMonth(parseInt(value));
+							renderCalendar();
+						} else if (selectEl.classList.contains('year-select')) {
+							currentDate.setFullYear(parseInt(value));
+							renderCalendar();
+						}
+					};
+				});
+			}
+
+			// Update dropdowns to reflect current calendar month/year
+			function updateDropdowns() {
+				const months = ['January', 'February', 'March', 'April', 'May', 'June',
+					'July', 'August', 'September', 'October', 'November', 'December'];
+
+				const monthValue = monthSelect.querySelector('.selected-value');
+				const yearValue = yearSelect.querySelector('.selected-value');
+
+				monthValue.textContent = months[currentDate.getMonth()];
+				yearValue.textContent = currentDate.getFullYear();
+
+				// Update selected state in options
+				monthSelect.querySelectorAll('.custom-option').forEach(opt => {
+					opt.classList.toggle('selected', parseInt(opt.dataset.value) === currentDate.getMonth());
+				});
+
+				yearSelect.querySelectorAll('.custom-option').forEach(opt => {
+					opt.classList.toggle('selected', parseInt(opt.dataset.value) === currentDate.getFullYear());
+				});
+			}
+
+			function formatDate(date) {
+				const d = date.getDate();
+				const s = ['th', 'st', 'nd', 'rd'][d % 10 > 3 ? 0 : (d % 100 - d % 10 !== 10) * d % 10];
+				return `${d}${s} ${date.toLocaleString('en', { month: 'short' })}'${date.getFullYear().toString().slice(-2)}`;
+			}
+
+			function isSameDay(a, b) {
+				return a && b &&
+					a.getDate() === b.getDate() &&
+					a.getMonth() === b.getMonth() &&
+					a.getFullYear() === b.getFullYear();
+			}
+
+			function inRange(d) {
+				return startDate && endDate && d > startDate && d < endDate;
+			}
+
+			function renderCalendar() {
+				const y = currentDate.getFullYear();
+				const m = currentDate.getMonth();
+
+				updateDropdowns();
+
+				const first = new Date(y, m, 1);
+				const last = new Date(y, m + 1, 0);
+				const offset = (first.getDay() || 7) - 1;
+
+				let html = '';
+				for (let i = 0; i < offset; i++) html += `<div class="calendar-day other-month"></div>`;
+
+				for (let d = 1; d <= last.getDate(); d++) {
+					const date = new Date(y, m, d);
+					let cls = 'calendar-day';
+					if (isSameDay(date, startDate)) cls += ' range-start';
+					else if (isSameDay(date, endDate)) cls += ' range-end';
+					else if (inRange(date)) cls += ' in-range';
+					html += `<div class="${cls}" data-date="${date.toISOString()}">${d}</div>`;
+				}
+
+				calendarDays.innerHTML = html;
+
+				calendarDays.querySelectorAll('.calendar-day:not(.other-month)').forEach(el => {
+					el.onclick = () => {
+						activeFilter = null;
+						clearActiveFilters();
+						const sel = new Date(el.dataset.date);
+
+						if (selectingStart || !startDate) {
+							startDate = sel;
+							endDate = null;
+							startInput.value = formatDate(startDate);
+							endInput.value = '';
+							selectingStart = false;
+						} else {
+							if (sel < startDate) {
+								endDate = startDate;
+								startDate = sel;
+							} else {
+								endDate = sel;
+							}
+							startInput.value = formatDate(startDate);
+							endInput.value = formatDate(endDate);
+							selectingStart = true;
+						}
+						renderCalendar();
+					};
+				});
+			}
+
+			function clearActiveFilters() {
+				filterDays.forEach(el => el.classList.remove('active-filter-day-option'));
+			}
+
+			function setRange(start, end, mode = null) {
+				startDate = start;
+				endDate = end;
+				selectingStart = true;
+				activeFilter = mode;
+
+				startInput.value = formatDate(startDate);
+				endInput.value = formatDate(endDate);
+
+				currentDate = new Date(startDate);
+				renderCalendar();
+			}
+
+			filterDays.forEach(filter => {
+				filter.onclick = () => {
+					clearActiveFilters();
+					filter.classList.add('active-filter-day-option');
+
+					const today = new Date();
+					today.setHours(0, 0, 0, 0);
+					const label = filter.textContent.trim();
+
+					if (label === 'Today') setRange(today, today, 'today');
+					if (label === 'Yesterday') {
+						const y = new Date(today); y.setDate(y.getDate() - 1);
+						setRange(y, y, 'yesterday');
+					}
+					if (label === 'Week') {
+						const s = new Date(today);
+						s.setDate(s.getDate() - s.getDay() + 1);
+						const e = new Date(s); e.setDate(s.getDate() + 6);
+						setRange(s, e, 'week');
+					}
+					if (label === 'Month') {
+						const s = new Date(today.getFullYear(), today.getMonth(), 1);
+						const e = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+						setRange(s, e, 'month');
+					}
+				};
+			});
+
+			function decreaseStartDate() {
+				if (!startDate) return;
+
+				const newStartDate = new Date(startDate);
+				newStartDate.setDate(newStartDate.getDate() - 1);
+
+				startDate = newStartDate;
+				startInput.value = formatDate(startDate);
+
+				if (startDate.getMonth() !== currentDate.getMonth() ||
+					startDate.getFullYear() !== currentDate.getFullYear()) {
+					currentDate = new Date(startDate);
+				}
+
+				activeFilter = null;
+				clearActiveFilters();
+				renderCalendar();
+			}
+
+			function increaseEndDate() {
+				if (!endDate) return;
+
+				const newEndDate = new Date(endDate);
+				newEndDate.setDate(newEndDate.getDate() + 1);
+
+				endDate = newEndDate;
+				endInput.value = formatDate(endDate);
+
+				if (endDate.getMonth() !== currentDate.getMonth() ||
+					endDate.getFullYear() !== currentDate.getFullYear()) {
+					currentDate = new Date(endDate);
+				}
+
+				activeFilter = null;
+				clearActiveFilters();
+				renderCalendar();
+			}
+
+			calendarIcon.onclick = e => {
+				e.stopPropagation();
+				calendar.classList.toggle('show');
+			};
+
+			startInput.onclick = e => {
+				e.stopPropagation();
+				selectingStart = true;
+				calendar.classList.add('show');
+			};
+
+			endInput.onclick = e => {
+				e.stopPropagation();
+				selectingStart = false;
+				calendar.classList.add('show');
+			};
+
+			calendar.onclick = e => e.stopPropagation();
+
+			prevMonthBtn.onclick = () => {
+				currentDate.setMonth(currentDate.getMonth() - 1);
+				renderCalendar();
+			};
+
+			nextMonthBtn.onclick = () => {
+				currentDate.setMonth(currentDate.getMonth() + 1);
+				renderCalendar();
+			};
+
+			if (leftArrow) {
+				leftArrow.style.cursor = 'pointer';
+				leftArrow.onclick = e => {
+					e.stopPropagation();
+					decreaseStartDate();
+				};
+			}
+
+			if (rightArrow) {
+				rightArrow.style.cursor = 'pointer';
+				rightArrow.onclick = e => {
+					e.stopPropagation();
+					increaseEndDate();
+				};
+			}
+
+			// Initialize
+			initCustomDropdowns();
+
+			const today = new Date();
+			today.setHours(0, 0, 0, 0);
+			startDate = new Date(today.getFullYear(), today.getMonth(), 1);
+			endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+			activeFilter = 'month';
+			currentDate = new Date(startDate);
+
+			startInput.value = formatDate(startDate);
+			endInput.value = formatDate(endDate);
+			renderCalendar();
+		}
+
+		// Close dropdowns when clicking outside
+		document.addEventListener('click', function (e) {
+			document.querySelectorAll('.custom-select.open').forEach(select => {
+				select.classList.remove('open');
+			});
+
+			document.querySelectorAll('.date-picker-container').forEach(container => {
+				const calendar = container.querySelector('.calendar');
+				if (!calendar) return;
+
+				if (!container.contains(e.target)) {
+					calendar.classList.remove('show');
+				}
+			});
+		}, true);
+	</script>
+
+
+
+	<!-- Audio player -->
+	<script>
+		document.querySelectorAll('.audio-player').forEach(initAudioPlayer);
+
+		function initAudioPlayer(player) {
+			const audio = player.querySelector('audio');
+			ALL_AUDIOS.add(audio);
+			const playButton = player.querySelector('.play-button');
+			const progressBar = player.querySelector('.progress-bar');
+			const progressFill = player.querySelector('.progress-fill');
+			const currentTimeEl = player.querySelector('.current-time');
+			const durationEl = player.querySelector('.duration');
+
+			let isDragging = false;
+			let completed = false;
+
+			function formatTime(seconds) {
+				if (isNaN(seconds)) return '0:00';
+				const m = Math.floor(seconds / 60);
+				const s = Math.floor(seconds % 60);
+				return `${m}:${s.toString().padStart(2, '0')}`;
+			}
+
+			playButton.addEventListener('click', () => {
+				if (completed) {
+					completed = false;
+					audio.currentTime = 0;
+					progressFill.style.width = '0%';
+					currentTimeEl.textContent = '0:00';
+					durationEl.textContent = '-' + formatTime(audio.duration);
+				}
+
+				if (audio.paused) {
+					audio.play();
+					playButton.classList.add('playing');
+				} else {
+					audio.pause();
+					playButton.classList.remove('playing');
+				}
+			});
+
+			audio.addEventListener('loadedmetadata', () => {
+				durationEl.textContent = '-' + formatTime(audio.duration);
+			});
+
+			audio.addEventListener('timeupdate', () => {
+				if (isDragging) return;
+
+				const percent = (audio.currentTime / audio.duration) * 100;
+				progressFill.style.width = percent + '%';
+				currentTimeEl.textContent = formatTime(audio.currentTime);
+				durationEl.textContent = '-' + formatTime(audio.duration - audio.currentTime);
+			});
+
+			audio.addEventListener('ended', () => {
+				completed = true;
+				playButton.classList.remove('playing');
+				progressFill.style.width = '100%';
+				currentTimeEl.textContent = formatTime(audio.duration);
+				durationEl.textContent = '-0:00';
+			});
+
+			function seek(e) {
+				const rect = progressBar.getBoundingClientRect();
+				let percent = (e.clientX - rect.left) / rect.width;
+				percent = Math.max(0, Math.min(1, percent));
+
+				audio.currentTime = percent * audio.duration;
+				progressFill.style.width = (percent * 100) + '%';
+				currentTimeEl.textContent = formatTime(audio.currentTime);
+			}
+
+			progressBar.addEventListener('click', seek);
+
+			progressBar.addEventListener('mousedown', e => {
+				isDragging = true;
+				seek(e);
+			});
+
+			document.addEventListener('mousemove', e => {
+				if (isDragging) seek(e);
+			});
+
+			document.addEventListener('mouseup', () => {
+				isDragging = false;
+			});
+		}
+	</script>
+
+
+	<!-- Status Carousel -->
+	<script>
+		$('.owl-carousel2').owlCarousel({
+			loop: false,
+			margin: 20,
+			nav: true,
+			navText: [
+				"<i class='fa fa-chevron-left'></i>",
+				"<i class='fa fa-chevron-right'></i>"
+			],
+			autoplay: false,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 6
+				}
+			}
+		})
+	</script>
+
+	<!-- Dashboard Carousel -->
+	<script>
+		$('.owl-carousel1').owlCarousel({
+			loop: false,
+			margin: 20,
+			nav: true,
+			navText: [
+				"<i class='fa fa-chevron-left'></i>",
+				"<i class='fa fa-chevron-right'></i>"
+			],
+			autoplay: false,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 5
+				}
+			}
+		})
+
+	</script>
+
+	<!-- Active Carousel box on click -->
+	<script>
+		document.addEventListener('click', function (e) {
+			const box = e.target.closest('.box');
+			if (!box) return;
+
+			const carousel = box.closest('.owl-carousel');
+			if (!carousel) return;
+
+			// Remove active state only within the clicked carousel
+			carousel.querySelectorAll('.box.active-box')
+				.forEach(el => el.classList.remove('active-box'));
+
+			// Activate selected box
+			box.classList.add('active-box');
+		});
+	</script>
+
+
+
+	<!-- Custom Audio Player Auto pause on modal close -->
+	<script>
+		document.querySelectorAll('.modal').forEach(modal => {
+			modal.addEventListener('hidden.bs.modal', () => {
+
+				ALL_AUDIOS.forEach(audio => {
+					audio.pause();
+					audio.currentTime = 0;
+					resetShortcutIcons(audio.dataset.key);
+				});
+
+				// Custom audio player UI reset
+				modal.querySelectorAll('.play-button').forEach(btn =>
+					btn.classList.remove('playing')
+				);
+
+				modal.querySelectorAll('.progress-fill').forEach(fill =>
+					fill.style.width = '0%'
+				);
+
+				modal.querySelectorAll('.current-time').forEach(t =>
+					t.textContent = '0:00'
+				);
+
+				modal.querySelectorAll('.duration').forEach(d =>
+					d.textContent = '-0:00'
+				);
+			});
+		});
+	</script>
+
+	<script>
+		/* =========================================================
+		   DASHBOARD + LEAD STATUS – UNIFIED SCRIPT
+		   ========================================================= */
+
+		document.addEventListener('DOMContentLoaded', () => {
+
+			/* ---------- DASHBOARD POPUPS ---------- */
+			const dashboard = {
+				calendarPopup: document.getElementById('dashboard-calendar-popup'),
+				filterPopup: document.getElementById('dashboard-filter-popup'),
+				calendarBtn: document.getElementById('dashboard-filter-calendar'),
+				filterBtn: document.getElementById('dashboard-filter-funnel'),
+				calendarPreview: document.querySelector('.calendar')
+			};
+
+			dashboard.calendarPopup?.addEventListener('click', e => e.stopPropagation());
+
+			dashboard.calendarBtn?.addEventListener('click', () => {
+				dashboard.filterPopup.style.display = 'none';
+				dashboard.calendarPopup.style.display =
+					dashboard.calendarPopup.style.display === 'block' ? 'none' : 'block';
+			});
+
+			dashboard.filterBtn?.addEventListener('click', () => {
+				dashboard.calendarPopup.style.display = 'none';
+				dashboard.filterPopup.style.display =
+					dashboard.filterPopup.style.display === 'block' ? 'none' : 'block';
+			});
+
+
+			/* ---------- LEAD STATUS POPUPS ---------- */
+			const leadStatus = {
+				calendarPopup: document.getElementById('calendar-popup'),
+				filterPopup: document.getElementById('filter-popup'),
+				calendarBtn: document.getElementById('filter-calendar'),
+				filterBtn: document.getElementById('filter-funnel')
+			};
+
+			leadStatus.calendarPopup?.addEventListener('click', e => e.stopPropagation());
+
+			leadStatus.calendarBtn?.addEventListener('click', () => {
+				leadStatus.filterPopup.style.display = 'none';
+				leadStatus.calendarPopup.style.display =
+					leadStatus.calendarPopup.style.display === 'block' ? 'none' : 'block';
+			});
+
+			leadStatus.filterBtn?.addEventListener('click', () => {
+				leadStatus.calendarPopup.style.display = 'none';
+				leadStatus.filterPopup.style.display =
+					leadStatus.filterPopup.style.display === 'block' ? 'none' : 'block';
+			});
+
+
+			/* ---------- SHARED FILTER CLOSE ---------- */
+			document.querySelectorAll('.lead-status-filter').forEach(el => {
+				el.addEventListener('click', () => {
+					dashboard.calendarPopup && (dashboard.calendarPopup.style.display = 'none');
+					dashboard.filterPopup && (dashboard.filterPopup.style.display = 'none');
+					leadStatus.calendarPopup && (leadStatus.calendarPopup.style.display = 'none');
+					leadStatus.filterPopup && (leadStatus.filterPopup.style.display = 'none');
+				});
+			});
+
+
+			/* ---------- FILTER OPTION TOGGLES ---------- */
+			const toggleGroup = (selector, activeClass) => {
+				document.querySelectorAll(selector).forEach(el => {
+					el.addEventListener('click', () => {
+						document.querySelectorAll(selector).forEach(i => i.classList.remove(activeClass));
+						el.classList.add(activeClass);
+					});
+				});
+			};
+
+			toggleGroup('.filter-date2', 'active-filter-date-option');
+			toggleGroup('.filter-day2', 'active-filter-day-option');
+			toggleGroup('.filter-date', 'active-filter-date-option');
+			toggleGroup('.filter-day', 'active-filter-day-option');
+
+
+			/* ---------- TAB SWITCHING ---------- */
+			const interactionTab = document.getElementById('dashboar-data-interation');
+			const activityTab = document.getElementById('dashboar-data-activity');
+			const infoSection = document.getElementById('dashboar-info');
+			const activitySection = document.getElementById('dashboard-call-details');
+
+			interactionTab?.addEventListener('click', () => {
+				infoSection.style.display = 'block';
+				activitySection.style.display = 'none';
+				interactionTab.classList.add('active-tab-link');
+				activityTab.classList.remove('active-tab-link');
+			});
+
+			activityTab?.addEventListener('click', () => {
+				activitySection.style.display = 'block';
+				infoSection.style.display = 'none';
+				activityTab.classList.add('active-tab-link');
+				interactionTab.classList.remove('active-tab-link');
+			});
+
+
+			/* ---------- ATTEMPT DROPDOWN ---------- */
+			document.getElementById('dialed-attempt')?.addEventListener('change', function () {
+				document.querySelectorAll('.attempt-box').forEach(b => b.classList.remove('selected-attempt'));
+				const selectedBox = document.getElementById('attempt-box' + this.value);
+				selectedBox?.classList.add('selected-attempt');
+			});
+
+
+			/* ---------- STAR TOGGLE ---------- */
+			document.querySelectorAll('.tbl-star').forEach(star => {
+				star.addEventListener('click', function () {
+					this.classList.toggle('bi-star');
+					this.classList.toggle('bi-star-fill');
+				});
+			});
+
+
+			/* ---------- SMS AUTO SCROLL ---------- */
+			const smsPreview = document.querySelector('.sms-preview');
+			if (smsPreview) smsPreview.scrollTop = smsPreview.scrollHeight;
+		});
+
+
+		/* ---------- GLOBAL OUTSIDE CLICK HANDLER ---------- */
+		document.addEventListener('click', e => {
+
+			const closeIfOutside = (popup, btns = []) => {
+				if (!popup) return;
+				const clickedInside = popup.contains(e.target) || btns.some(b => b?.contains(e.target));
+				if (!clickedInside) popup.style.display = 'none';
+			};
+
+			closeIfOutside(
+				document.getElementById('dashboard-calendar-popup'),
+				[
+					document.getElementById('dashboard-filter-calendar'),
+					document.querySelector('.calendar')
+				]
+			);
+
+			closeIfOutside(
+				document.getElementById('dashboard-filter-popup'),
+				[document.getElementById('dashboard-filter-funnel')]
+			);
+
+			closeIfOutside(
+				document.getElementById('calendar-popup'),
+				[document.getElementById('filter-calendar')]
+			);
+
+			closeIfOutside(
+				document.getElementById('filter-popup'),
+				[document.getElementById('filter-funnel')]
+			);
+		});
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="jquery.sumoselect.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$('.select-campaign').SumoSelect({
+				placeholder: 'Select Campaigns',
+				selectAll: true,
+				search: true,
+				okCancelInMulti: true
+			});
+			$('.select-dispositions').SumoSelect({
+				placeholder: 'Select Dispositions',
+				selectAll: true,
+				search: true,
+				okCancelInMulti: true
+			});
+			$('.select-agents').SumoSelect({
+				placeholder: 'Select Agents',
+				selectAll: true,
+				search: true,
+				okCancelInMulti: true
+			});
+			$('.select-lead-sources').SumoSelect({
+				placeholder: 'Select Lead Sources',
+				selectAll: true,
+				search: true,
+				okCancelInMulti: true
+			}); $('.select-agents-lead').SumoSelect({
+				placeholder: 'Select Agents',
+				selectAll: true,
+				search: true,
+				okCancelInMulti: true
+			}); $('.select-stages-lead').SumoSelect({
+				placeholder: 'Select Lead Stages',
+				selectAll: true,
+				search: true,
+				okCancelInMulti: true
+			}); $('.select-disposition-lead').SumoSelect({
+				placeholder: 'Select Dispositions',
+				selectAll: true,
+				search: true,
+				okCancelInMulti: true
+			});
+		});
+	</script>
+
+</body>
+
+</html>
